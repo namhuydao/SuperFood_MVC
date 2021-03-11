@@ -29,7 +29,7 @@ class AdminPasswordController extends Controller
      */
     public function create()
     {
-
+        Blade::render('admin/password/forgot');
     }
 
     /**
@@ -40,7 +40,8 @@ class AdminPasswordController extends Controller
      */
     public function store()
     {
-
+        //Kiểm tra email và gửi email
+        echo "<script>alert('Vui lòng kiểm tra Email của bạn'); window.location = '/superFood/admin/forgotPassword/create';</script>";
     }
 
     /**
@@ -91,11 +92,11 @@ class AdminPasswordController extends Controller
                 header('Location: /superFood/admin/userProfile/passEdit/' . $id);
             }
             else{
-                echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/' . $id;</script>";
+                echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/$id'</script>";
             }
         }
         else{
-            echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/' . $id;</script>";
+            echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/$id'</script>";
         }
     }
 

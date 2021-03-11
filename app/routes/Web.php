@@ -51,6 +51,11 @@ $router->map('POST','/superFood/admin/userProfile/update/[i:id]','App\Controller
 $router->map('GET','/superFood/admin/userProfile/passEdit/[i:id]','App\Controllers\AdminPasswordController@edit','editUserPass');
 $router->map('POST','/superFood/admin/userProfile/passUpdate/[i:id]','App\Controllers\AdminPasswordController@update','updateUserPass');
 
+$router->map('GET','/superFood/admin/forgotPassword/create','App\Controllers\AdminPasswordController@create','createForgotPass');
+$router->map('POST','/superFood/admin/forgotPassword/store','App\Controllers\AdminPasswordController@store','storeForgotPass');
+
+$router->map('GET','/superFood/admin/resetPassword/create','App\Controllers\AdminResetPasswordController@create','createResetPass');
+$router->map('POST','/superFood/admin/resetPassword/store','App\Controllers\AdminResetPasswordController@store','storeResetPass');
 
 
 

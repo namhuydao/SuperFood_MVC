@@ -4,12 +4,12 @@ namespace App\controllers;
 
 use App\Blade\Blade;
 use App\database\Database;
-use App\Users;
 
 new Database;
 
-class AdminUserProfileController extends Controller
+class AdminResetPasswordController extends Controller
 {
+
     /**
      * @function index()
      * List All data from database
@@ -27,6 +27,7 @@ class AdminUserProfileController extends Controller
      */
     public function create()
     {
+        Blade::render('admin/password/reset');
     }
 
     /**
@@ -61,34 +62,12 @@ class AdminUserProfileController extends Controller
      */
     public function update($id)
     {
-        $id = $id['id'];
-        $firstname = $_POST['profileFirstName'];
-        $lastname = $_POST['profileLastName'];
-        $email = $_POST['profileEmail'];
-        $flag = 1;
-        if ($firstname === "" || $lastname === "" || $email === "") {
-            $flag = 0;
-        }
-        if ($flag === 1) {
-            $user = Users::find($id)->update([
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'email' => $email
-            ]);
-            if ($user) {
-                header('Location: /superFood/admin/userProfile/edit/' . $id);
-            } else {
-                echo "<script>alert('Sửa không thành công'); window.location= '/superFood/admin/userProfile/edit/$id'</script>";
-            }
-        } else {
-            echo "<script>alert('Sửa không thành công'); window.location= '/superFood/admin/userProfile/edit/$id'</script>";
-        }
+
     }
 
     public function edit($id)
     {
-        $user = Users::find($id['id']);
-        Blade::render('admin/userProfile/edit', compact('user'));
+
     }
 
     /**
@@ -99,6 +78,5 @@ class AdminUserProfileController extends Controller
      */
     public function delete($id)
     {
-
     }
 }

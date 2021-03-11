@@ -15,7 +15,7 @@
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body"><p style="font-size: 30px; text-align: center">
                                         <?php
-                                        echo \App\Users::count();;
+                                        echo \App\Users::count();
                                         ?>
                                         <i style="padding-left: 10px" class="fas fa-user"></i>
                                     </p>

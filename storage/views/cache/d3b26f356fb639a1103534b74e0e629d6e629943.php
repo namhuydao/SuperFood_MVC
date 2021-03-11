@@ -61,7 +61,7 @@
                                             <p>Mật khẩu hiện tại:</p>
                                             <input class="form-control" type="password" name="profileConfirmPass"
                                                    id="profileConfirmPass">
-                                            <span style="font-size: 14px; color: cornflowerblue"><a href="../authentication/forgotPassword.php">Quên mật khẩu?</a></span>
+                                            <span style="font-size: 14px; color: cornflowerblue"><a href="/superFood/admin/forgotPassword/create">Quên mật khẩu?</a></span>
                                         </div>
                                         <div class="newPassword form-group">
                                             <p>Mật khẩu mới:</p>
