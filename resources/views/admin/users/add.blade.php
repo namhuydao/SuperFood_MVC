@@ -14,6 +14,12 @@
                 </div>
                 <div style="width: 40%; margin: auto">
                     <form action="/superFood/admin/users/store" method="POST" enctype="multipart/form-data">
+                        <div class="form-group position-relative text-center">
+                            <img class="imagesForm" width="100" src="/superFood/backend/assets/images/user/defaultImage.png"/>
+                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input
+                                        style="display: none" type="file" id="fileToAddUser"
+                                        name="fileToUpload"></label>
+                        </div>
                         <div class="form-group">
                             <label for="userFirstNameAdd">Tên:</label>
                             <input type="text" name="userFirstNameAdd" class="form-control" id="userFirstNameAdd">
@@ -43,12 +49,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{--                        <div class="form-group position-relative text-center">--}}
-                        {{--                            <img class="imagesForm" width="100" src="../../../../public/admin/assets/images/userImages/defaultImage.png"/>--}}
-                        {{--                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input--}}
-                        {{--                                        style="display: none" type="file" id="fileToAddUser"--}}
-                        {{--                                        name="fileToUpload"></label>--}}
-                        {{--                        </div>--}}
                         <button class="btn btn-primary">Thêm</button>
                     </form>
                 </div>

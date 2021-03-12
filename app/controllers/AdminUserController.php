@@ -2,7 +2,6 @@
 namespace App\controllers;
 use App\Blade\Blade;
 use App\database\Database;
-use App\Permissions;
 use App\Roles;
 use App\Users;
 
@@ -59,20 +58,32 @@ class AdminUserController extends Controller
             $flag = 0;
         }
         if ($flag === 1){
-            $user = Users::create([
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'email' => $email,
-                'password' => md5($password),
-                'role_id' => $role_id
-            ]);
-            if ($user){
-                header('Location: /superFood/admin/users/');
+            if (isset($_FILES['fileToUpload'])) {
+                $image_src = uploadFile($_FILES['fileToUpload'], 'user');
+                $user = Users::create([
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'email' => $email,
+                    'password' => md5($password),
+                    'role_id' => $role_id,
+                    'image' => $image_src
+                ]);
             }else{
-                echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users/';</script>";
+                $user = Users::create([
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'email' => $email,
+                    'password' => md5($password),
+                    'role_id' => $role_id
+                ]);
+            }
+            if ($user){
+                header('Location: /superFood/admin/users');
+            }else{
+                echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
             }
         }else{
-            echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users/';</script>";
+            echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
         }
     }
     /**
@@ -128,12 +139,12 @@ class AdminUserController extends Controller
                 ]);
             }
             if ($user){
-                header('Location: /superFood/admin/users/');
+                header('Location: /superFood/admin/users');
             }else{
-                echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users/';</script>";
+                echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
             }
         }else{
-            echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users/';</script>";
+            echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
         }
     }
 
@@ -151,6 +162,6 @@ class AdminUserController extends Controller
      */
     public function delete($id){
         Users::destroy($id);
-        header('Location: /superFood/admin/users/');
+        header('Location: /superFood/admin/users');
     }
 }

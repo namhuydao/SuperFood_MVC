@@ -35,7 +35,7 @@
                                         <td>{{$role->name}}</td>
                                         <td>
                                             <a class="btn btn-primary" href="/superFood/admin/roles/edit/{{$role->id}}">Sửa</a>
-                                            <a class="btn btn-danger" href="/superFood/admin/roles/delete/{{$role->id}}">Xóa</a>
+                                            <a class="role_delete btn btn-danger" href="/superFood/admin/roles/delete/{{$role->id}}">Xóa</a>
                                         </td>
                                     </tr>
                                     @endforeach

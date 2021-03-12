@@ -26,7 +26,7 @@
                                 <h3 class="text-center font-weight-light my-4">Đặt lại mật khẩu</h3>
                             </div>
                             <div class="card-body">
-                                <form action="" method="POST">
+                                <form action="/superFood/admin/resetPassword/store" method="POST">
                                     <div class="form-group">
                                         <label for="">Mật khẩu mới :</label>
                                         <div class="input-group">

@@ -21,7 +21,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="manage-users.php">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="indexUsers">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -36,7 +36,7 @@
                                         <i style="padding-left: 10px" class="fad fa-newspaper"></i>
                                     </p></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="manage-news.php">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="indexNews">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -83,26 +83,25 @@
                                         <th>Tác giả</th>
                                         <th>Danh mục</th>
                                         <th>Tags</th>
-                                        <th>Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($news as $key => $news)
+                                    @foreach($news as $key => $news_item)
                                         <tr>
-                                            <td class="text-center"><img src="" alt="" width="100" height="100"></td>
-                                            <td>{{$news->title}}</td>
-                                            <td>{{$news->description}}</td>
-                                            <td>{{$news->author}}</td>
+                                            <td class="text-center"><img src="/superFood/backend/assets/images/{{ $news_item->image }}" alt="" width="100" height="100"></td>
+                                            <td>{{$news_item->title}}</td>
+                                            <td>{{$news_item->description}}</td>
+                                            <td>{{$news_item->author}}</td>
                                             <td>
                                                 @foreach ($categories as $category)
-                                                    @if ($news->category_id == $category->id)
+                                                    @if ($news_item->category_id == $category->id)
                                                         {{$category->name}}
                                                     @endif
                                                 @endforeach
                                             </td>
                                             <td>
                                                 @foreach ($newsTags as $newsTag)
-                                                    @if ($news->id == $newsTag->news_id)
+                                                    @if ($news_item->id == $newsTag->news_id)
                                                         @foreach ($tags as $tag)
                                                             @if($tag->id == $newsTag->tag_id)
                                                                 {{$tag->name . ','}}
@@ -111,13 +110,6 @@
                                                     @endif
                                                 @endforeach
                                             </td>
-                                            <td>
-                                                <a class="btn btn-primary"
-                                                   href="/superFood/admin/news/edit/{{$news->id}}">Sửa</a>
-                                                <a class="btn btn-danger"
-                                                   href="/superFood/admin/news/delete/{{$news->id}}">Xóa</a>
-                                            </td>
-
                                         </tr>
                                     @endforeach
                                     </tbody>

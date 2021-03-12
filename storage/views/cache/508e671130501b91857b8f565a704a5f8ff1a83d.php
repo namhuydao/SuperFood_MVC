@@ -15,6 +15,12 @@
                 <div style="width: 40%; margin: auto">
                     <form action="/superFood/admin/news/store" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
+                            <div class="form-group position-relative text-center">
+                                <img class="imagesForm" width="100" height="100" src="/superFood/backend/assets/images/news/default.png"/>
+                                <label class="formLabel" for="fileToAddNews"><i class="fas fa-pen"></i><input
+                                            style="display: none" type="file" id="fileToAddNews"
+                                            name="fileToUpload"></label>
+                            </div>
                             <div class="form-group">
                                 <label for="newsTitleAdd">Tiêu đề:</label>
                                 <input type="text" name="newsTitleAdd" class="form-control" id="newsTitleAdd">

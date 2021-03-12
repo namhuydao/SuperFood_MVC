@@ -35,7 +35,7 @@
                                         <td>{{$tag->name}}</td>
                                         <td>
                                             <a class="btn btn-primary" href="/superFood/admin/newsTags/edit/{{$tag->id}}">Sửa</a>
-                                            <a class="btn btn-danger" href="/superFood/admin/newsTags/delete/{{$tag->id}}">Xóa</a>
+                                            <a class="news_tag_delete btn btn-danger" href="/superFood/admin/newsTags/delete/{{$tag->id}}">Xóa</a>
                                         </td>
                                     </tr>
                                     @endforeach

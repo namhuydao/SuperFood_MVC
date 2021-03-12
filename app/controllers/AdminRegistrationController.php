@@ -5,7 +5,7 @@ namespace App\controllers;
 use App\Blade\Blade;
 use App\database\Database;
 use App\Users;
-
+use App\Mail\Mail;
 new Database;
 
 class AdminRegistrationController extends Controller
@@ -71,7 +71,7 @@ class AdminRegistrationController extends Controller
         }
         if ($firstname != "" && $lastname != "" && $password != "" && $email != "" && $confirm != "") {
             $md5Password = md5($password);
-
+            $time = date('Y-m-d H:i:s');
             $register = Users::create([
                 'firstname' => $firstname,
                 'lastname' => $lastname,
@@ -79,6 +79,14 @@ class AdminRegistrationController extends Controller
                 'password' => $md5Password
             ]);
             if ($register) {
+                $content = 'Chúc mừng bạn đã đăng ký tài khoản thành công<br>
+                Tài khoản của bạn là :<br>
+                username: ' . $email . '<br>' .
+                    'password: ' . $password . '<br>' .
+                    'Click vào đây để kích hoạt tài khoản <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/activeAccount/update/'. $register->id . '?time=' . $time .'">Kích hoạt tài khoản</a>';
+
+                //  Gửi email thông báo tạo tài khoảng thành công
+                Mail::send($email, $firstname, 'Đăng ký tài khoản thành công!', $content);
                 echo "<script>alert('Đăng ký thành công'); window.location= '/superFood/admin/register';</script>";
             } else {
                 echo "<script>alert('Đăng ký không thành công'); window.location= '/superFood/admin/register';</script>";

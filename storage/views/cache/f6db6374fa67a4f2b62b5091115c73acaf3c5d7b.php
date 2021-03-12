@@ -34,7 +34,7 @@
                                     <tbody>
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td class="text-center"><img src="" alt="" width="100" height="100"></td>
+                                            <td class="text-center"><img src="/superFood/backend/assets/images/<?php echo e($user->image); ?>" alt="" width="100" height="100"></td>
                                             <td><?php echo e($user->firstname); ?></td>
                                             <td><?php echo e($user->lastname); ?></td>
                                             <td><?php echo e($user->email); ?></td>
@@ -48,7 +48,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary" href="/superFood/admin/users/edit/<?php echo e($user->id); ?>">Sửa</a>
-                                                <a class="btn btn-danger" href="/superFood/admin/users/delete/<?php echo e($user->id); ?>">Xóa</a>
+                                                <a class="user_delete btn btn-danger" href="/superFood/admin/users/delete/<?php echo e($user->id); ?>">Xóa</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

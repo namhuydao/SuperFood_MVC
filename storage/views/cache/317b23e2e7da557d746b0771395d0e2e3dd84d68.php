@@ -21,7 +21,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="manage-users.php">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="indexUsers">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -36,7 +36,7 @@
                                         <i style="padding-left: 10px" class="fad fa-newspaper"></i>
                                     </p></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="manage-news.php">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="indexNews">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -83,19 +83,18 @@
                                         <th>Tác giả</th>
                                         <th>Danh mục</th>
                                         <th>Tags</th>
-                                        <th>Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $news_item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td class="text-center"><img src="" alt="" width="100" height="100"></td>
-                                            <td><?php echo e($news->title); ?></td>
-                                            <td><?php echo e($news->description); ?></td>
-                                            <td><?php echo e($news->author); ?></td>
+                                            <td class="text-center"><img src="/superFood/backend/assets/images/<?php echo e($news_item->image); ?>" alt="" width="100" height="100"></td>
+                                            <td><?php echo e($news_item->title); ?></td>
+                                            <td><?php echo e($news_item->description); ?></td>
+                                            <td><?php echo e($news_item->author); ?></td>
                                             <td>
                                                 <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php if($news->category_id == $category->id): ?>
+                                                    <?php if($news_item->category_id == $category->id): ?>
                                                         <?php echo e($category->name); ?>
 
                                                     <?php endif; ?>
@@ -103,7 +102,7 @@
                                             </td>
                                             <td>
                                                 <?php $__currentLoopData = $newsTags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $newsTag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <?php if($news->id == $newsTag->news_id): ?>
+                                                    <?php if($news_item->id == $newsTag->news_id): ?>
                                                         <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <?php if($tag->id == $newsTag->tag_id): ?>
                                                                 <?php echo e($tag->name . ','); ?>
@@ -113,13 +112,6 @@
                                                     <?php endif; ?>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </td>
-                                            <td>
-                                                <a class="btn btn-primary"
-                                                   href="/superFood/admin/news/edit/<?php echo e($news->id); ?>">Sửa</a>
-                                                <a class="btn btn-danger"
-                                                   href="/superFood/admin/news/delete/<?php echo e($news->id); ?>">Xóa</a>
-                                            </td>
-
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>

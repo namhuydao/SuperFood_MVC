@@ -34,7 +34,7 @@
                                     <tbody>
                                     @foreach($users as $key => $user)
                                         <tr>
-                                            <td class="text-center"><img src="" alt="" width="100" height="100"></td>
+                                            <td class="text-center"><img src="/superFood/backend/assets/images/{{ $user->image }}" alt="" width="100" height="100"></td>
                                             <td>{{$user->firstname}}</td>
                                             <td>{{$user->lastname}}</td>
                                             <td>{{$user->email}}</td>
@@ -47,7 +47,7 @@
                                             </td>
                                             <td>
                                                 <a class="btn btn-primary" href="/superFood/admin/users/edit/{{$user->id}}">Sửa</a>
-                                                <a class="btn btn-danger" href="/superFood/admin/users/delete/{{$user->id}}">Xóa</a>
+                                                <a class="user_delete btn btn-danger" href="/superFood/admin/users/delete/{{$user->id}}">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

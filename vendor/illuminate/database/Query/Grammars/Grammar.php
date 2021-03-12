@@ -459,7 +459,7 @@ class Grammar extends BaseGrammar
     }
 
     /**
-     * Compile a where clause comparing two columns..
+     * Compile a where clause comparing two columns.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $where
@@ -999,10 +999,10 @@ class Grammar extends BaseGrammar
      * Compile an "upsert" statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder $query
-     * @param  array $values
-     * @param  array $uniqueBy
-     * @param  array $update
-     * @return  string
+     * @param  array  $values
+     * @param  array  $uniqueBy
+     * @param  array  $update
+     * @return string
      *
      * @throws \RuntimeException
      */

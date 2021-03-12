@@ -1,8 +1,8 @@
 <?php
 namespace App;
-use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Models\Role;
 
-class Roles extends Model {
+class Roles extends Role {
     protected $guarded = [];
     protected $table = "roles";
 }

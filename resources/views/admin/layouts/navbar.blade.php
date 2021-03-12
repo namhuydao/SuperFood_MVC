@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <a class="navbar-brand" href="/superFood/admin/dashboard/">
-        Xin chào @php echo $_SESSION['user']['firstname'] @endphp
+    <a class="navbar-brand" href="/superFood/admin/dashboard">
+        Xin chào @php echo App\Users::find($_SESSION['user']['id'])->firstname@endphp
     </a>
     <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i>
     </button>
@@ -19,14 +19,15 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false"><img style="border-radius: 50%" src="
-                @if ($_SESSION['user']['images'])
-                    {{$_SESSION['user']['images']}}
-                @else
-                    {{$_ENV['APP_NAME'].'backend/assets/images/userImages/defaultImage.png'}}
+                @if (App\Users::find($_SESSION['user']['id'])->image)
+                        /superFood/backend/assets/images/{{App\Users::find($_SESSION['user']['id'])->image}}
+                @else /superFood/backend/assets/images/user/defaultImage.png
                 @endif
-                ?>" alt="" width="30" height="30"></a>
+                        " alt="" width="30" height="30"></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="/superFood/admin/userProfile/edit/@php echo $_SESSION['user']['id'] @endphp">Thông tin cá nhân</a>
+                <a class="dropdown-item"
+                   href="/superFood/admin/userProfile/edit/@php echo $_SESSION['user']['id'] @endphp">Thông tin cá
+                    nhân</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/superFood/admin/logout">Đăng xuất</a>
             </div>

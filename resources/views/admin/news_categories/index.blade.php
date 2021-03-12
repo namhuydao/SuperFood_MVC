@@ -35,7 +35,7 @@
                                         <td>{{$category->name}}</td>
                                         <td>
                                             <a class="btn btn-primary" href="/superFood/admin/newsCategories/edit/{{$category->id}}">Sửa</a>
-                                            <a class="btn btn-danger" href="/superFood/admin/newsCategories/delete/{{$category->id}}">Xóa</a>
+                                            <a class="news_categories_delete btn btn-danger" href="/superFood/admin/newsCategories/delete/{{$category->id}}">Xóa</a>
                                         </td>
                                     </tr>
                                     @endforeach

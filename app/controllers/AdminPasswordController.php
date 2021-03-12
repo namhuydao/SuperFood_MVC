@@ -4,10 +4,10 @@ namespace App\controllers;
 
 use App\Blade\Blade;
 use App\database\Database;
+use App\Mail\Mail;
 use App\Users;
 
 new Database;
-
 class AdminPasswordController extends Controller
 {
 
@@ -40,7 +40,13 @@ class AdminPasswordController extends Controller
      */
     public function store()
     {
-        //Kiểm tra email và gửi email
+        $mail = test_input($_POST['emailForgot']);
+        $user_mail = Users::where('email', $mail)->get();
+
+        $content = 'Đặt lại mật khẩu' . '<br>' .
+            'Click vào đây để đặt lại mật khẩu <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/resetPassword/create?email=' . $mail . '">Đặt lại mật khẩu</a>';
+
+        Mail::send($mail, $user_mail[0]->firstname, 'Mật khẩu mới của bạn!', $content);
         echo "<script>alert('Vui lòng kiểm tra Email của bạn'); window.location = '/superFood/admin/forgotPassword/create';</script>";
     }
 

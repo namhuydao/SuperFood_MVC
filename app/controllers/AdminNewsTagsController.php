@@ -2,7 +2,6 @@
 namespace App\controllers;
 use App\Blade\Blade;
 use App\database\Database;
-use App\NewsCategories;
 use App\NewsTags;
 
 new Database;
@@ -38,10 +37,10 @@ class AdminNewsTagsController extends Controller
             'name' => $name
         ]);
         if($tag){
-            header('Location:/superFood/admin/newsTags/');
+            header('Location:/superFood/admin/newsTags');
         }
         else{
-            echo "<script>alert('Thêm Tag thất bại'); window.location= '/superFood/admin/newsTags/';</script>";
+            echo "<script>alert('Thêm Tag thất bại'); window.location= '/superFood/admin/newsTags';</script>";
         }
     }
     /**
@@ -67,10 +66,10 @@ class AdminNewsTagsController extends Controller
             'name' => $name
         ]);
         if($tag){
-            header('Location:/superFood/admin/newsTags/');
+            header('Location:/superFood/admin/newsTags');
         }
         else{
-            echo "<script>alert('Sửa Tag thất bại'); window.location= '/superFood/admin/newsTags/';</script>";
+            echo "<script>alert('Sửa Tag thất bại'); window.location= '/superFood/admin/newsTags';</script>";
         }
     }
 
@@ -87,6 +86,6 @@ class AdminNewsTagsController extends Controller
      */
     public function delete($id){
         NewsTags::destroy($id);
-        header('Location:/superFood/admin/newsTags/');
+        header('Location:/superFood/admin/newsTags');
     }
 }

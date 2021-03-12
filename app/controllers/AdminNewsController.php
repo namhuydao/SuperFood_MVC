@@ -1,7 +1,6 @@
 <?php
 namespace App\controllers;
 use App\Blade\Blade;
-use App\components\CategoriesRecursive;
 use App\database\Database;
 use App\LinkNewsTags;
 use App\News;
@@ -31,7 +30,7 @@ class AdminNewsController extends Controller
      */
     public function create(){
         $tags = NewsTags::all();
-        $html = $this->getCategory($parent_id = 0);
+        $html = getCategory($parent_id = 0);
         Blade::render('admin/news/add', compact('html', 'tags'));
     }
     /**
@@ -47,15 +46,25 @@ class AdminNewsController extends Controller
         $author = $_POST['newsAuthorAdd'];
         $category = $_POST['newsCategoryAdd'];
 
-
-        $news = News::create([
-            'title' => $title,
-            'description' => $desc,
-            'content' => $content,
-            'author' => $author,
-            'category_id' => $category
-        ]);
-
+        if (isset($_FILES['fileToUpload'])) {
+            $image_src = uploadFile($_FILES['fileToUpload'], 'news');
+            $news = News::create([
+                'title' => $title,
+                'description' => $desc,
+                'content' => $content,
+                'author' => $author,
+                'category_id' => $category,
+                'image' => $image_src
+            ]);
+        }else{
+            $news = News::create([
+                'title' => $title,
+                'description' => $desc,
+                'content' => $content,
+                'author' => $author,
+                'category_id' => $category
+            ]);
+        }
         if ($news) {
             $tags = $_POST["tags"];
             if (!empty($tags)) {
@@ -66,9 +75,9 @@ class AdminNewsController extends Controller
                     ]);
                 }
             }
-            header('Location:/superFood/admin/news/');
+            header('Location:/superFood/admin/news');
         } else {
-            echo "<script>alert('Thêm tin thất bại'); window.location= '/superFood/admin/news/';</script>";
+            echo "<script>alert('Thêm tin thất bại'); window.location= '/superFood/admin/news';</script>";
         }
     }
     /**
@@ -96,13 +105,25 @@ class AdminNewsController extends Controller
         $category = $_POST['newsCategoryUpdate'];
 
         $found_news = News::find($id['id']);
-        $news = $found_news->update([
-            'title' => $title,
-            'description' => $desc,
-            'content' => $content,
-            'author' => $author,
-            'category_id' => $category
-        ]);
+        if (isset($_FILES['fileToUpload'])) {
+            $image_src = uploadFile($_FILES['fileToUpload'], 'news');
+            $news = $found_news->update([
+                'title' => $title,
+                'description' => $desc,
+                'content' => $content,
+                'author' => $author,
+                'category_id' => $category,
+                'image' => $image_src
+            ]);
+        }else{
+            $news = $found_news->update([
+                'title' => $title,
+                'description' => $desc,
+                'content' => $content,
+                'author' => $author,
+                'category_id' => $category
+            ]);
+        }
 
         if ($news) {
             //  Gắn tags
@@ -141,9 +162,9 @@ class AdminNewsController extends Controller
                 // trường hợp mà không chọn tag nào thì xóa hết các liên kết
                 LinkNewsTags::where('news_id', $found_news->id)->delete();
             }
-            header('Location:/superFood/admin/news/');
+            header('Location:/superFood/admin/news');
         } else {
-            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood/admin/news/';</script>";
+            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood/admin/news';</script>";
         }
     }
 
@@ -163,6 +184,6 @@ class AdminNewsController extends Controller
      */
     public function delete($id){
         News::destroy($id);
-        header('Location:/superFood/admin/news/');
+        header('Location:/superFood/admin/news');
     }
 }

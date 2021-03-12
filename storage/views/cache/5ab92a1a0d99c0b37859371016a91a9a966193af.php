@@ -35,7 +35,7 @@
                                         <td><?php echo e($role->name); ?></td>
                                         <td>
                                             <a class="btn btn-primary" href="/superFood/admin/roles/edit/<?php echo e($role->id); ?>">Sửa</a>
-                                            <a class="btn btn-danger" href="/superFood/admin/roles/delete/<?php echo e($role->id); ?>">Xóa</a>
+                                            <a class="role_delete btn btn-danger" href="/superFood/admin/roles/delete/<?php echo e($role->id); ?>">Xóa</a>
                                         </td>
                                     </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -15,6 +15,12 @@
                 <div style="width: 40%; margin: auto">
                     <form action="/superFood/admin/news/update/{{$news->id}}" method="POST"
                           enctype="multipart/form-data">
+                        <div class="form-group position-relative text-center">
+                            <img class="imagesForm" width="100" height="100" src="/superFood/backend/assets/images/{{$news->image}}"/>
+                            <label class="formLabel" for="fileToAddNews"><i class="fas fa-pen"></i>
+                                <input style="display: none" type="file" id="fileToAddNews"
+                                        name="fileToUpload"></label>
+                        </div>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="newsTitleUpdate">Tiêu đề:</label>

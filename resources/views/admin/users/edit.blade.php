@@ -44,7 +44,7 @@
                             </select>
                         </div>
                         {{--                        <div class="form-group position-relative text-center">--}}
-                        {{--                            <img class="imagesForm" width="100" src="../../../../public/admin/assets/images/userImages/defaultImage.png"/>--}}
+                        {{--                            <img class="imagesForm" width="100" src="../../../../public/admin/assets/images/user/defaultImage.png"/>--}}
                         {{--                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input--}}
                         {{--                                        style="display: none" type="file" id="fileToAddUser"--}}
                         {{--                                        name="fileToUpload"></label>--}}

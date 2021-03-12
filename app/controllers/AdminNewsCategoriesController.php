@@ -40,10 +40,10 @@ class AdminNewsCategoriesController extends Controller
             'parent_id' => $cate
         ]);
         if($category){
-            header('Location:/superFood/admin/newsCategories/');
+            header('Location:/superFood/admin/newsCategories');
         }
         else{
-            echo "<script>alert('Thêm danh mục thất bại'); window.location= '/superFood/admin/newsCategories/';</script>";
+            echo "<script>alert('Thêm danh mục thất bại'); window.location= '/superFood/admin/newsCategories';</script>";
         }
     }
     /**
@@ -69,10 +69,10 @@ class AdminNewsCategoriesController extends Controller
             'name' => $name
         ]);
         if($category){
-            header('Location:/superFood/admin/newsCategories/');
+            header('Location:/superFood/admin/newsCategories');
         }
         else{
-            echo "<script>alert('Sửa danh mục thất bại'); window.location= '/superFood/admin/newsCategories/';</script>";
+            echo "<script>alert('Sửa danh mục thất bại'); window.location= '/superFood/admin/newsCategories';</script>";
         }
     }
 
@@ -89,6 +89,6 @@ class AdminNewsCategoriesController extends Controller
      */
     public function delete($id){
         NewsCategories::destroy($id);
-        header('Location:/superFood/admin/newsCategories/');
+        header('Location:/superFood/admin/newsCategories');
     }
 }

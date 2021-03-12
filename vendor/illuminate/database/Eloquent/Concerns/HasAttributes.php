@@ -124,6 +124,13 @@ trait HasAttributes
     protected static $mutatorCache = [];
 
     /**
+     * The encrypter instance that is used to encrypt attributes.
+     *
+     * @var \Illuminate\Contracts\Encryption\Encrypter
+     */
+    public static $encrypter;
+
+    /**
      * Convert the model's attributes to an array.
      *
      * @return array
@@ -507,11 +514,13 @@ trait HasAttributes
      * Merge new casts with existing casts on the model.
      *
      * @param  array  $casts
-     * @return void
+     * @return $this
      */
     public function mergeCasts($casts)
     {
         $this->casts = array_merge($this->casts, $casts);
+
+        return $this;
     }
 
     /**
@@ -770,9 +779,13 @@ trait HasAttributes
     {
         [$key, $path] = explode('->', $key, 2);
 
-        $this->attributes[$key] = $this->asJson($this->getArrayAttributeWithValue(
+        $value = $this->asJson($this->getArrayAttributeWithValue(
             $path, $key, $value
         ));
+
+        $this->attributes[$key] = $this->isEncryptedCastable($key)
+                    ? $this->castAttributeAsEncryptedString($key, $value)
+                    : $value;
 
         return $this;
     }
@@ -835,8 +848,15 @@ trait HasAttributes
      */
     protected function getArrayAttributeByKey($key)
     {
-        return isset($this->attributes[$key]) ?
-                    $this->fromJson($this->attributes[$key]) : [];
+        if (! isset($this->attributes[$key])) {
+            return [];
+        }
+
+        return $this->fromJson(
+            $this->isEncryptedCastable($key)
+                    ? $this->fromEncryptedString($this->attributes[$key])
+                    : $this->attributes[$key]
+        );
     }
 
     /**
@@ -883,15 +903,14 @@ trait HasAttributes
     }
 
     /**
-     * Decode the given encrypted string.
+     * Decrypt the given encrypted string.
      *
      * @param  string  $value
-     * @param  bool  $asObject
      * @return mixed
      */
     public function fromEncryptedString($value)
     {
-        return Crypt::decryptString($value);
+        return (static::$encrypter ?? Crypt::getFacadeRoot())->decrypt($value, false);
     }
 
     /**
@@ -903,7 +922,18 @@ trait HasAttributes
      */
     protected function castAttributeAsEncryptedString($key, $value)
     {
-        return Crypt::encryptString($value);
+        return (static::$encrypter ?? Crypt::getFacadeRoot())->encrypt($value, false);
+    }
+
+    /**
+     * Set the encrypter instance that will be used to encrypt attributes.
+     *
+     * @param  \Illuminate\Contracts\Encryption\Encrypter  $encrypter
+     * @return void
+     */
+    public static function encryptUsing($encrypter)
+    {
+        static::$encrypter = $encrypter;
     }
 
     /**
@@ -1495,7 +1525,7 @@ trait HasAttributes
     }
 
     /**
-     * Get the attributes that have been changed since last sync.
+     * Get the attributes that have been changed since the last sync.
      *
      * @return array
      */

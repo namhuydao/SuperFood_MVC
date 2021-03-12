@@ -166,16 +166,16 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `content`, `author`, `category_id`, `images`, `date`, `created_at`, `updated_at`) VALUES
-(3, 'qưdqwd  ds ssds q', 'qdwqwd', '<p>qưdqwdqw</p>\r\n', 'Huy', 4, '../../../../public/admin/assets/images/newsImages/6040ab03ee61b.jpg', '2021-01-30 12:32:58', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(4, 'sadasd', 'qưdqw', '<p>qưeqweq</p>\r\n', 'Ád', 4, '../../../../public/admin/assets/images/newsImages/6040aafb027ae.jpg', '2021-01-30 12:42:26', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(5, 'dqwq', 'qưdqwd', '<p>dqwdqdqw</p>\r\n', 'qưeqwe', 4, '../../../../public/admin/assets/images/newsImages/6040aaf43ae5d.jpg', '2021-01-30 12:48:21', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(6, 'test', 'test testt', '<p>llsadascnanoeqcqefcqcbkbvybc,yxbajcasncqcnoicxc .s;SM</p>\r\n', 'sdncacaskc', 5, '../../../../public/admin/assets/images/newsImages/6040aaed9ddec.jpg', '2021-02-08 10:36:54', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(10, 'ádasda', 'sdqwdqwd', '<p>&aacute;dasd<strong>&aacute;dasdaqw<em>&egrave;qefefe</em></strong></p>\r\n\r\n<p>&nbsp;</p>\r\n', 'sadasd', 4, '../../../../public/admin/assets/images/newsImages/6040aae71b57f.jpg', '2021-03-01 05:18:14', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(11, 'đâs sca ae dứ', 'fewfefwe', '<h1>xin ch&agrave;o</h1>\r\n\r\n<p><strong><em>hưng hahaha</em></strong></p>\r\n', 'fefwfe', 4, '../../../../public/admin/assets/images/newsImages/6040aae041c62.jpg', '2021-03-01 05:19:37', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(13, 'táo', 'ưqwqdqwdqw', '<p>hfdshsfdkjadsiucashlnshcslkdioqdkcdoiasldqoiads</p>\r\n', 'ádasdasd', 4, '../../../../public/admin/assets/images/newsImages/6040aad9394fe.jpg', '2021-03-03 14:18:50', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(14, 'kkskkx', 'ad', '<p>hihihih xin ch&agrave;o sasscxycy</p>\r\n', 'kkaslsacxy', 8, '../../../../public/admin/assets/images/newsImages/60437e1de8ebd.jpg', '2021-03-03 15:16:44', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(15, 'ấdsdqw', 'qdwqwdqwd', '<p>fvwefsdgdsdvvcsfcycdas</p>\r\n', '3223423', 5, '../../../../public/admin/assets/images/newsImages/60437e278d4bd.jpg', '2021-03-03 15:17:09', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
-(16, 'fergfeffwdscsdfvf', 'dsgfdsgsdfsdf', '<p>ewfwdfsdfdsaf ừ ứd</p>\r\n', 'gg3gw', 6, '../../../../public/admin/assets/images/newsImages/60437e326480a.jpg', '2021-03-03 15:17:31', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(3, 'qưdqwd  ds ssds q', 'qdwqwd', '<p>qưdqwdqw</p>\r\n', 'Huy', 4, '../../../../public/admin/assets/images/news/6040ab03ee61b.jpg', '2021-01-30 12:32:58', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(4, 'sadasd', 'qưdqw', '<p>qưeqweq</p>\r\n', 'Ád', 4, '../../../../public/admin/assets/images/news/6040aafb027ae.jpg', '2021-01-30 12:42:26', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(5, 'dqwq', 'qưdqwd', '<p>dqwdqdqw</p>\r\n', 'qưeqwe', 4, '../../../../public/admin/assets/images/news/6040aaf43ae5d.jpg', '2021-01-30 12:48:21', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(6, 'test', 'test testt', '<p>llsadascnanoeqcqefcqcbkbvybc,yxbajcasncqcnoicxc .s;SM</p>\r\n', 'sdncacaskc', 5, '../../../../public/admin/assets/images/news/6040aaed9ddec.jpg', '2021-02-08 10:36:54', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(10, 'ádasda', 'sdqwdqwd', '<p>&aacute;dasd<strong>&aacute;dasdaqw<em>&egrave;qefefe</em></strong></p>\r\n\r\n<p>&nbsp;</p>\r\n', 'sadasd', 4, '../../../../public/admin/assets/images/news/6040aae71b57f.jpg', '2021-03-01 05:18:14', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(11, 'đâs sca ae dứ', 'fewfefwe', '<h1>xin ch&agrave;o</h1>\r\n\r\n<p><strong><em>hưng hahaha</em></strong></p>\r\n', 'fefwfe', 4, '../../../../public/admin/assets/images/news/6040aae041c62.jpg', '2021-03-01 05:19:37', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(13, 'táo', 'ưqwqdqwdqw', '<p>hfdshsfdkjadsiucashlnshcslkdioqdkcdoiasldqoiads</p>\r\n', 'ádasdasd', 4, '../../../../public/admin/assets/images/news/6040aad9394fe.jpg', '2021-03-03 14:18:50', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(14, 'kkskkx', 'ad', '<p>hihihih xin ch&agrave;o sasscxycy</p>\r\n', 'kkaslsacxy', 8, '../../../../public/admin/assets/images/news/60437e1de8ebd.jpg', '2021-03-03 15:16:44', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(15, 'ấdsdqw', 'qdwqwdqwd', '<p>fvwefsdgdsdvvcsfcycdas</p>\r\n', '3223423', 5, '../../../../public/admin/assets/images/news/60437e278d4bd.jpg', '2021-03-03 15:17:09', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
+(16, 'fergfeffwdscsdfvf', 'dsgfdsgsdfsdf', '<p>ewfwdfsdfdsaf ừ ứd</p>\r\n', 'gg3gw', 6, '../../../../public/admin/assets/images/news/60437e326480a.jpg', '2021-03-03 15:17:31', '2021-03-10 02:52:52', '2021-03-10 02:53:08'),
 (18, 'test', 'test', '<p>test</p>\r\n', 'test', 5, '', NULL, '2021-03-09 20:54:29', '2021-03-09 20:54:29');
 
 -- --------------------------------------------------------
@@ -315,9 +315,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `images`, `firstname`, `lastname`, `email`, `password`, `created_at`, `updated_at`, `is_active`, `status`, `role_id`) VALUES
-(18, '../../../../public/admin/assets/images/userImages/603cbb52836c9.jpg', 'Huy', 'Đào', 'namhuydao@tutamail.com', '164d5fdfd02634293161afac4cf47299', '2021-01-27 03:01:30', '2021-03-11 01:24:51', 1, 1, 2),
+(18, '../../../../public/admin/assets/images/user/603cbb52836c9.jpg', 'Huy', 'Đào', 'namhuydao@tutamail.com', '164d5fdfd02634293161afac4cf47299', '2021-01-27 03:01:30', '2021-03-11 01:24:51', 1, 1, 2),
 (23, '', 'huy', 'ádasdasd', 'lackilu1ke@tutamail.com', '46e44aa0bc21d8a826d79344df38be4b', '2021-03-01 03:53:04', '2021-03-09 09:02:14', 1, 1, 15),
-(24, '../../../../../webadmin/public/admin/assets/images/userImages/603f0a78c9eb2.jpg', 'Vũ', 'Hưng', 'vanvthy@gmail.com', '2b4110cde52d9be3748854a44e1105af', '2021-03-02 16:03:04', '2021-03-09 09:02:14', 1, 1, 2);
+(24, '../../../../../webadmin/public/admin/assets/images/user/603f0a78c9eb2.jpg', 'Vũ', 'Hưng', 'vanvthy@gmail.com', '2b4110cde52d9be3748854a44e1105af', '2021-03-02 16:03:04', '2021-03-09 09:02:14', 1, 1, 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
