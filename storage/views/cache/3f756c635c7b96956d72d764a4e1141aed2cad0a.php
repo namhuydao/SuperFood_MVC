@@ -14,6 +14,12 @@
                 </div>
                 <div style="width: 40%; margin: auto">
                     <form action="/superFood/admin/users/update/<?php echo e($user->id); ?>" method="POST" enctype="multipart/form-data">
+                        <div class="form-group position-relative text-center">
+                            <img class="imagesForm" width="100" height="100" src="/superFood/backend/assets/images/<?php echo e($user->image); ?>"/>
+                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input
+                                        style="display: none" type="file" id="fileToAddUser"
+                                        name="fileToUpload"></label>
+                        </div>
                         <div class="form-group">
                             <label for="userFirstNameUpdate">Tên:</label>
                             <input value="<?php echo e($user->firstname); ?>" type="text" name="userFirstNameUpdate" class="form-control" id="userFirstNameUpdate">

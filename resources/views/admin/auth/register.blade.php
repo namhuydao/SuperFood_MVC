@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group mt-4 mb-0">
-                                        <button name="register" class="btn btn-primary btn-block">Tạo tài khoản
+                                        <button class="btn btn-primary btn-block">Tạo tài khoản
                                         </button>
                                     </div>
                                 </form>

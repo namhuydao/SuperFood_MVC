@@ -8,7 +8,7 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Quản lý người dùng</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard/">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Quản lý người dùng</li>
                     </ol>
                     <a href="/superFood/admin/users/create" class="btn btn-primary addBtn">Thêm người dùng

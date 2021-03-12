@@ -47,6 +47,8 @@ $router->map('GET','/superFood/admin/roles/delete/[i:id]','App\Controllers\Admin
 
 $router->map('GET','/superFood/admin/userProfile/edit/[i:id]','App\Controllers\AdminUserProfileController@edit','editUserProfile');
 $router->map('POST','/superFood/admin/userProfile/update/[i:id]','App\Controllers\AdminUserProfileController@update','updateUserProfile');
+$router->map('GET','/superFood/admin/userProfile/deleteImage/[i:id]','App\Controllers\AdminUserProfileController@delete','deleteUserProfileImage');
+
 
 $router->map('GET','/superFood/admin/userProfile/passEdit/[i:id]','App\Controllers\AdminPasswordController@edit','editUserPass');
 $router->map('POST','/superFood/admin/userProfile/passUpdate/[i:id]','App\Controllers\AdminPasswordController@update','updateUserPass');

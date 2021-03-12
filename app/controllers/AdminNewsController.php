@@ -46,7 +46,7 @@ class AdminNewsController extends Controller
         $author = $_POST['newsAuthorAdd'];
         $category = $_POST['newsCategoryAdd'];
 
-        if (isset($_FILES['fileToUpload'])) {
+        if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
             $image_src = uploadFile($_FILES['fileToUpload'], 'news');
             $news = News::create([
                 'title' => $title,
@@ -105,26 +105,19 @@ class AdminNewsController extends Controller
         $category = $_POST['newsCategoryUpdate'];
 
         $found_news = News::find($id['id']);
-        if (isset($_FILES['fileToUpload'])) {
+        $news = $found_news->update([
+            'title' => $title,
+            'description' => $desc,
+            'content' => $content,
+            'author' => $author,
+            'category_id' => $category
+        ]);
+        if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
             $image_src = uploadFile($_FILES['fileToUpload'], 'news');
             $news = $found_news->update([
-                'title' => $title,
-                'description' => $desc,
-                'content' => $content,
-                'author' => $author,
-                'category_id' => $category,
                 'image' => $image_src
             ]);
-        }else{
-            $news = $found_news->update([
-                'title' => $title,
-                'description' => $desc,
-                'content' => $content,
-                'author' => $author,
-                'category_id' => $category
-            ]);
         }
-
         if ($news) {
             //  Gắn tags
             $tags = $_POST["tags"];

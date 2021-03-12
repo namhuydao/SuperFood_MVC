@@ -52,8 +52,9 @@ class AdminResetPasswordController extends Controller
         }
         if ($ok === 1){
             Users::where('email', $email)->update([
-                'password' => $newPass
+                'password' => md5($newPass)
             ]);
+            header('Location: /superFood/admin/login');
         }else{
             echo "<script>alert('Không thành công!'); window.location='/superFood/admin/login'; </script>";
         }
@@ -66,6 +67,7 @@ class AdminResetPasswordController extends Controller
      * Type id : number
      * Get id from URl
      * Example : Product::find($id)
+     * @param $id
      */
     public function show($id)
     {
@@ -78,6 +80,7 @@ class AdminResetPasswordController extends Controller
      * Get id from URL
      * Type data : Array
      * Example : Product::find($id)->update($data)
+     * @param $id
      */
     public function update($id)
     {
@@ -94,6 +97,7 @@ class AdminResetPasswordController extends Controller
      * Delete data with id
      * Type id : number
      * Example : Product::delete()
+     * @param $id
      */
     public function delete($id)
     {

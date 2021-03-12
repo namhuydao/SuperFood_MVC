@@ -8,12 +8,18 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Quản lý người dùng</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard/">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thêm người dùng</li>
                     </ol>
                 </div>
                 <div style="width: 40%; margin: auto">
                     <form action="/superFood/admin/users/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
+                        <div class="form-group position-relative text-center">
+                            <img class="imagesForm" width="100" height="100" src="/superFood/backend/assets/images/{{$user->image}}"/>
+                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input
+                                        style="display: none" type="file" id="fileToAddUser"
+                                        name="fileToUpload"></label>
+                        </div>
                         <div class="form-group">
                             <label for="userFirstNameUpdate">Tên:</label>
                             <input value="{{$user->firstname}}" type="text" name="userFirstNameUpdate" class="form-control" id="userFirstNameUpdate">
@@ -43,12 +49,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{--                        <div class="form-group position-relative text-center">--}}
-                        {{--                            <img class="imagesForm" width="100" src="../../../../public/admin/assets/images/user/defaultImage.png"/>--}}
-                        {{--                            <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input--}}
-                        {{--                                        style="display: none" type="file" id="fileToAddUser"--}}
-                        {{--                                        name="fileToUpload"></label>--}}
-                        {{--                        </div>--}}
                         <button class="btn btn-primary">Thêm</button>
                     </form>
                 </div>

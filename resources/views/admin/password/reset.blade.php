@@ -27,7 +27,7 @@
                             </div>
                             <div class="card-body">
                                 <form action="/superFood/admin/resetPassword/store" method="POST">
-                                    <input type="text" name="emailReset">
+                                    <input value="{{$_GET['email']}}" type="hidden" name="emailReset">
                                     <div class="form-group">
                                         <label for="">Mật khẩu mới :</label>
                                         <div class="input-group">

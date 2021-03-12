@@ -116,6 +116,7 @@ $(document).ready(function () {
             confirmButtonText: 'Vâng, Xóa nó!'
         }).then((result) => {
             if (result.isConfirmed) {
+
                 window.location.href = $(this).attr('href');
             }
         });

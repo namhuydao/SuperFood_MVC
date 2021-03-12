@@ -1,11 +1,14 @@
 <?php
+
 namespace App\controllers;
+
 use App\Blade\Blade;
 use App\database\Database;
 use App\Roles;
 use App\Users;
 
 new Database;
+
 class AdminUserController extends Controller
 {
     /**
@@ -13,28 +16,33 @@ class AdminUserController extends Controller
      * List All data from database
      * Example : Product::all()
      */
-    public function index(){
+    public function index()
+    {
         $users = Users::all();
         $roles = Roles::all();
         Blade::render('admin/users/index', compact('users', 'roles'));
     }
+
     /**
      * @function create()
      * View form create
      * Type data : Array
      * Example : Product::create($data)
      */
-    public function create(){
+    public function create()
+    {
         $roles = Roles::all();
-        Blade::render('admin/users/add',compact('roles'));
+        Blade::render('admin/users/add', compact('roles'));
     }
+
     /**
      * @function store()
      * Insert data to database
      * Type data : Array
      * Example : Product::create($data)
      */
-    public function store(){
+    public function store()
+    {
         $firstname = test_input($_POST["userFirstNameAdd"]);
         $lastname = test_input($_POST["userLastNameAdd"]);
         $email = test_input($_POST["userEmailAdd"]);
@@ -57,8 +65,8 @@ class AdminUserController extends Controller
         if ($password !== $repassword) {
             $flag = 0;
         }
-        if ($flag === 1){
-            if (isset($_FILES['fileToUpload'])) {
+        if ($flag === 1) {
+            if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
                 $image_src = uploadFile($_FILES['fileToUpload'], 'user');
                 $user = Users::create([
                     'firstname' => $firstname,
@@ -68,7 +76,7 @@ class AdminUserController extends Controller
                     'role_id' => $role_id,
                     'image' => $image_src
                 ]);
-            }else{
+            } else {
                 $user = Users::create([
                     'firstname' => $firstname,
                     'lastname' => $lastname,
@@ -77,15 +85,16 @@ class AdminUserController extends Controller
                     'role_id' => $role_id
                 ]);
             }
-            if ($user){
+            if ($user) {
                 header('Location: /superFood/admin/users');
-            }else{
+            } else {
                 echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
             }
-        }else{
+        } else {
             echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
         }
     }
+
     /**
      * @function show()
      * Get detail a data in database
@@ -93,8 +102,10 @@ class AdminUserController extends Controller
      * Get id from URl
      * Example : Product::find($id)
      */
-    public function show($id){
+    public function show($id)
+    {
     }
+
     /**
      * @function update()
      * Update data with id to database
@@ -103,7 +114,8 @@ class AdminUserController extends Controller
      * Type data : Array
      * Example : Product::find($id)->update($data)
      */
-    public function update($id){
+    public function update($id)
+    {
         $firstname = $_POST['userFirstNameUpdate'];
         $lastname = $_POST['userLastNameUpdate'];
         $email = $_POST['userEmailUpdate'];
@@ -120,35 +132,36 @@ class AdminUserController extends Controller
         if ($password !== $repassword) {
             $flag = 0;
         }
-        if ($flag === 1){
-            if ($password == ""){
+        if ($flag === 1) {
+            $user = Users::find($id['id'])->update([
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'email' => $email,
+                'role_id' => $role_id
+            ]);
+            if (is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
+                $image_src = uploadFile($_FILES['fileToUpload'], 'user');
                 $user = Users::find($id['id'])->update([
-                    'firstname' => $firstname,
-                    'lastname' => $lastname,
-                    'email' => $email,
-                    'role_id' => $role_id
+                    'image' => $image_src
                 ]);
             }
-            else{
+            if ($password == "") {
                 $user = Users::find($id['id'])->update([
-                    'firstname' => $firstname,
-                    'lastname' => $lastname,
-                    'email' => $email,
-                    'password' => md5($password),
-                    'role_id' => $role_id
+                    'password' => md5($password)
                 ]);
             }
-            if ($user){
+            if ($user) {
                 header('Location: /superFood/admin/users');
-            }else{
+            } else {
                 echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
             }
-        }else{
+        } else {
             echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
         }
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $user = Users::find($id['id']);
         $roles = Roles::all();
         Blade::render('admin/users/edit', compact('user', 'roles'));
@@ -160,7 +173,8 @@ class AdminUserController extends Controller
      * Type id : number
      * Example : Product::delete()
      */
-    public function delete($id){
+    public function delete($id)
+    {
         Users::destroy($id);
         header('Location: /superFood/admin/users');
     }

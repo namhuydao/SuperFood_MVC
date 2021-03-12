@@ -15,7 +15,14 @@
                         <div class="col-md-4">
                             <div class="profile__left">
                                 <div class="profile-name">
-                                    <img src="" alt="" width="150" height="150">
+                                    <img src="
+                                     <?php if($user->image): ?>
+                                            /superFood/backend/assets/images/<?php echo e($user->image); ?>
+
+                                    <?php else: ?>
+                                            /superFood/backend/assets/images/user/defaultImage.png
+                                    <?php endif; ?>
+                                    " alt="" width="150" height="150">
                                     <h5><?php echo e($user->lastname); ?> <?php echo e($user->firstname); ?></h5>
                                 </div>
                                 <div class="email">

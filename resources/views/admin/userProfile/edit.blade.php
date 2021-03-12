@@ -8,14 +8,21 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Thông tin người dùng</h1>
                     <ol class="breadcrumb mb-4" style="background: white">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard/">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thông tin người dùng</li>
                     </ol>
                     <div class="profile__content row">
                         <div class="col-md-4">
                             <div class="profile__left">
                                 <div class="profile-name">
-                                    <img src="" alt="" width="150" height="150">
+                                    <img src="
+                                    @if ($user->image)
+                                            /superFood/backend/assets/images/{{$user->image}}
+                                    @else
+                                            /superFood/backend/assets/images/user/defaultImage.png
+                                    @endif
+                                            " alt="" width="150"
+                                         height="150">
                                     <h5>{{$user->lastname}} {{$user->firstname}}</h5>
                                 </div>
                                 <div class="email">
@@ -24,7 +31,8 @@
                                 </div>
                                 <a id="infoBtn" class="btn btn-light active" style="width: 100%;display: flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                         class="kt-svg-icon">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <polygon points="0 0 24 0 24 24 0 24"></polygon>
                                             <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z"
@@ -35,9 +43,11 @@
                                     </svg>
                                     Thông tin chính
                                 </a>
-                                <a href="/superFood/admin/userProfile/passEdit/{{$user->id}}" id="resetBtn" class="btn btn-light" style="width: 100%;display: flex">
+                                <a href="/superFood/admin/userProfile/passEdit/{{$user->id}}" id="resetBtn"
+                                   class="btn btn-light" style="width: 100%;display: flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
+                                         class="kt-svg-icon">
                                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                             <rect x="0" y="0" width="24" height="24"></rect>
                                             <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z"
@@ -56,15 +66,24 @@
                             <div class="profile__right">
                                 <div class="profile__info active">
                                     <h6>Thông tin cơ bản</h6>
-                                    <form action="/superFood/admin/userProfile/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
+                                    <form action="/superFood/admin/userProfile/update/{{$user->id}}" method="POST"
+                                          enctype="multipart/form-data">
                                         <div class="avatar form-group">
                                             <p>Avatar</p>
                                             <div class="avatar_img" style="width: 60%">
-                                                <img id="profileInfo_avatar" src="" alt="" width="120" height="120">
+                                                <img id="profileInfo_avatar" src="
+                                                @if ($user->image)
+                                                        /superFood/backend/assets/images/{{$user->image}}
+                                                @else
+                                                        /superFood/backend/assets/images/user/defaultImage.png
+                                                @endif
+                                                        " alt="" width="120" height="120">
                                                 <label class="avatarLabel" for="avatar"><i class="fas fa-pen"></i><input
                                                             style="display: none" type="file" id="avatar"
                                                             name="fileToUpload"></label>
-                                                <a href="" style="border: none; background: transparent" class="avatarDelete"><i class="fas fa-times"></i></a>
+                                                <a href="/superFood/admin/userProfile/deleteImage/{{$user->id}}"
+                                                   style="border: none; background: transparent"
+                                                   class="avatarDelete"><i class="fas fa-times"></i></a>
                                             </div>
                                         </div>
                                         <div class="name form-group">
@@ -101,7 +120,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group" style="text-align: center; width: 60%; margin: 0 auto">
-                                            <button name="editUserProfile" style="width: 100%" type="submit" class="btn btn-primary">Lưu</button>
+                                            <button name="editUserProfile" style="width: 100%" type="submit"
+                                                    class="btn btn-primary">Lưu
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

@@ -15,7 +15,13 @@
                         <div class="col-md-4">
                             <div class="profile__left">
                                 <div class="profile-name">
-                                    <img src="" alt="" width="150" height="150">
+                                    <img src="
+                                     @if ($user->image)
+                                            /superFood/backend/assets/images/{{$user->image}}
+                                    @else
+                                            /superFood/backend/assets/images/user/defaultImage.png
+                                    @endif
+                                    " alt="" width="150" height="150">
                                     <h5>{{$user->lastname}} {{$user->firstname}}</h5>
                                 </div>
                                 <div class="email">
