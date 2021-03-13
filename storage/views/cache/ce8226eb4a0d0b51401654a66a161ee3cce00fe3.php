@@ -8,7 +8,7 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Thêm quyền</h1>
                     <ol class="breadcrumb mb-4" style="background: white">
-                        <li class="breadcrumb-item"><a href="../main-view/dashboard.php">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thêm quyền</li>
                     </ol>
                     <form action="/superFood/admin/roles/update/<?php echo e($role->id); ?>" method="POST">

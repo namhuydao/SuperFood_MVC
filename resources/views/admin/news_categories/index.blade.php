@@ -1,3 +1,6 @@
+@if(!checkPer($_SESSION['user']['id'], 'post_view'))
+    @php(header('Location: /superFood/admin/dashboard'))
+@endif
 @extends('admin.layouts.master')
 @section('title'){{'News Categories'}}@endsection
 @section('content')
@@ -11,8 +14,10 @@
                         <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Quản lý danh mục tin tức</li>
                     </ol>
-                    <a href="/superFood/admin/newsCategories/create" class="btn btn-primary addBtn">Thêm danh mục
-                    </a>
+                    @if(checkPer($_SESSION['user']['id'], 'post_add'))
+                        <a href="/superFood/admin/newsCategories/create" class="btn btn-primary addBtn">Thêm danh mục
+                        </a>
+                    @endif
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table mr-1"></i>
@@ -30,14 +35,20 @@
                                     </thead>
                                     <tbody>
                                     @foreach($categories as $category)
-                                    <tr>
-                                        <td>{{$category->id}}</td>
-                                        <td>{{$category->name}}</td>
-                                        <td>
-                                            <a class="btn btn-primary" href="/superFood/admin/newsCategories/edit/{{$category->id}}">Sửa</a>
-                                            <a class="news_categories_delete btn btn-danger" href="/superFood/admin/newsCategories/delete/{{$category->id}}">Xóa</a>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{$category->id}}</td>
+                                            <td>{{$category->name}}</td>
+                                            <td>
+                                                @if(checkPer($_SESSION['user']['id'], 'post_edit'))
+                                                    <a class="btn btn-primary"
+                                                       href="/superFood/admin/newsCategories/edit/{{$category->id}}">Sửa</a>
+                                                @endif
+                                                @if(checkPer($_SESSION['user']['id'], 'post_delete'))
+                                                    <a class="news_categories_delete btn btn-danger"
+                                                       href="/superFood/admin/newsCategories/delete/{{$category->id}}">Xóa</a>
+                                                @endif
+                                            </td>
+                                        </tr>
                                     @endforeach
                                     </tbody>
                                 </table>

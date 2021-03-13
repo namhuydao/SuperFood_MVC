@@ -40,3 +40,33 @@ function uploadFile($file, $path) {
     move_uploaded_file($file['tmp_name'], $base_folder . '/' . $dir_name . '/' . $file_name_insert);
     return $dir_name . '/' . $file_name_insert;
 }
+
+function checkPer($user_id, $per_code)
+{
+    $users = \App\Users::all();
+    $roles = \App\Roles::all();
+    $permissions = \App\Permissions::all();
+    $role_pers = \App\LinkRolePermission::all();
+
+        foreach ($users as $user){
+            if ($user->id == $user_id){
+                foreach ($role_pers as $role_per){
+                    if ($user->role_id == $role_per->role_id){
+                        foreach ($roles as $role){
+                            if ($role->id == $role_per->role_id){
+                                foreach ($permissions as $permission){
+                                    if ($permission->id == $role_per->permission_id){
+                                        if ($per_code == $permission->code){
+                                            return true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+
+}

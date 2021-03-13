@@ -1,3 +1,6 @@
+@if(!checkPer($_SESSION['user']['id'], 'role_view'))
+    @php(header('Location: /superFood/admin/dashboard'))
+@endif
 @extends('admin.layouts.master')
 @section('title'){{'Add Role'}}@endsection
 @section('content')

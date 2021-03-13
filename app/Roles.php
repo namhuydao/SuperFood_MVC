@@ -1,14 +1,35 @@
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Permission\Models\Role;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Spatie\Permission\Contracts\Role;
 
-class Roles extends Model {
+class Roles extends Model implements Role{
     protected $guarded = [];
     protected $table = "roles";
 
-    public function permissions()
+    public function permissions(): BelongsToMany
     {
-        return $this->belongsToMany(Permission::class,'link_role_permission');
+        // TODO: Implement permissions() method.
+    }
+
+    public static function findByName(string $name, $guardName): Role
+    {
+        // TODO: Implement findByName() method.
+    }
+
+    public static function findById(int $id, $guardName): Role
+    {
+        // TODO: Implement findById() method.
+    }
+
+    public static function findOrCreate(string $name, $guardName): Role
+    {
+        // TODO: Implement findOrCreate() method.
+    }
+
+    public function hasPermissionTo($permission): bool
+    {
+        // TODO: Implement hasPermissionTo() method.
     }
 }

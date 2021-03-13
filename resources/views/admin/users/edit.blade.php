@@ -1,3 +1,6 @@
+@if(!checkPer($_SESSION['user']['id'], 'user_edit'))
+    @php(header('Location: /superFood/admin/dashboard'))
+@endif
 @extends('admin.layouts.master')
 @section('title'){{'Add Users'}}@endsection
 @section('content')

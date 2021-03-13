@@ -1,3 +1,6 @@
+@if(!checkPer($_SESSION['user']['id'], 'post_view'))
+    @php(header('Location: /superFood/admin/dashboard'))
+@endif
 @extends('admin.layouts.master')
 @section('title'){{'Add News Category'}}@endsection
 @section('content')
