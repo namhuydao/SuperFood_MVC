@@ -30,7 +30,7 @@ class AdminNewsController extends Controller
      */
     public function create(){
         $tags = NewsTags::all();
-        $html = getCategory($parent_id = 0);
+        $html = getNewsCategory($parent_id = 0);
         Blade::render('admin/news/add', compact('html', 'tags'));
     }
     /**
@@ -95,7 +95,7 @@ class AdminNewsController extends Controller
      * Type id :number
      * Get id from URL
      * Type data : Array
-     * Example : Product::find($id)->update($data)
+     * Example   : Product::find($id)->update($data)
      */
     public function update($id){
         $title = $_POST['newsTitleUpdate'];
@@ -165,7 +165,7 @@ class AdminNewsController extends Controller
         $tags = NewsTags::all();
         $news = News::find($id['id']);
         $newsTags = LinkNewsTags::all();
-        $html = getCategory($news->category_id);
+        $html = getNewsCategory($news->category_id);
         Blade::render('admin/news/edit', compact('news', 'html', 'tags', 'newsTags'));
     }
 
@@ -177,6 +177,7 @@ class AdminNewsController extends Controller
      */
     public function delete($id){
         News::destroy($id);
+        LinkNewsTags::where('news_id', $id['id'])->delete();
         header('Location:/superFood/admin/news');
     }
 }

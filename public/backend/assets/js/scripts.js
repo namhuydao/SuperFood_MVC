@@ -43,8 +43,11 @@ $('.perChecked input').each(function() {
         }
     })
 });
+
 CKEDITOR.replace('newsContentAdd');
 CKEDITOR.replace('newsContentUpdate');
+CKEDITOR.replace('productContentAdd');
+CKEDITOR.replace('productContentUpdate');
 
 $(document).ready(function () {
     $( "a.news_delete" ).click(function( event ) {

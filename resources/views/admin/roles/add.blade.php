@@ -29,19 +29,23 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="role__right">
-                                    {{$code = ''}}
-                                    @foreach ($permissions as $permission)
-                                        @php $module_name = @explode('_', $permission->code)[0] @endphp
-                                        @if ($module_name != $code)
-                                            @php $code = $module_name @endphp
+                                    @php($code = '')
+                                    @foreach($permissions as $permission)
+                                        @php($module_name = @explode('_', $permission->code)[0])
+                                        @if($module_name != $code)
+                                            @php($code = $module_name)
                                             @if ($module_name === "post")
-                                                @php $module_name = "Bài viết" @endphp
+                                                @php( $module_name = "Bài viết" )
                                             @elseif ($module_name === "product")
-                                                @php $module_name = "Sản phẩm" @endphp
+                                                @php($module_name = "Sản phẩm")
                                             @elseif ($module_name === "role")
-                                                @php $module_name = "Quyền" @endphp
+                                                @php($module_name = "Quyền")
                                             @elseif ($module_name === "user")
-                                                @php $module_name = "Người dùng" @endphp
+                                                @php($module_name = "Người dùng")
+                                            @elseif ($module_name === "animation")
+                                                @php($module_name = "Hiệu ứng")
+                                            @elseif ($module_name === "widget")
+                                                @php($module_name = "Widget")
                                             @endif
                                             <label class='perChecked' style="margin-top: 30px">
                                                 <input
@@ -57,7 +61,6 @@
                                                        type="checkbox" checked
                                                        value="{{$permission->id}}">{{$permission->name}}
                                             </label>
-
                                     @endforeach
                                 </div>
                             </div>

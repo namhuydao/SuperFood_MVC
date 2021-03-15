@@ -2,7 +2,7 @@
     @php(header('Location: /superFood/admin/dashboard'))
 @endif
 @extends('admin.layouts.master')
-@section('title'){{'Add News'}}@endsection
+@section('title'){{'Edit News'}}@endsection
 @section('content')
     <div id="layoutSidenav">
         @include('admin.layouts.sideNav')
@@ -12,7 +12,7 @@
                     <h1 class="mt-4">Quản lý tin tức</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Thêm tin tức</li>
+                        <li class="breadcrumb-item active">Sửa tin tức</li>
                     </ol>
                 </div>
                 <div style="width: 40%; margin: auto">
@@ -48,7 +48,6 @@
                             <div class="form-group">
                                 <label for="newsCategoryUpdate">Danh mục:</label>
                                 <select name="newsCategoryUpdate" id="newsCategoryUpdate" class="form-control">
-                                    <option value="0">Chọn làm danh mục cha:</option>
                                     {!! $html !!}
                                 </select>
                             </div>
@@ -68,7 +67,7 @@
                                     </label>
                                 @endforeach
                             </div>
-                            <button class="btn btn-primary">Thêm</button>
+                            <button class="btn btn-primary">Sửa</button>
                         </div>
                     </form>
                 </div>

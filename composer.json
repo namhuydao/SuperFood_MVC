@@ -12,8 +12,7 @@
         "jenssegers/blade": "^1.4",
         "vlucas/phpdotenv": "^5.2",
         "illuminate/database": "^8.13",
-        "phpmailer/phpmailer": "^6.3",
-        "spatie/laravel-permission": "^4.0"
+        "phpmailer/phpmailer": "^6.3"
     },
 
     "config":{

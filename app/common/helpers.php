@@ -2,6 +2,7 @@
 
 use App\components\CategoriesRecursive;
 use App\NewsCategories;
+use App\ProductCategories;
 
 const BASE_URL = 'http://localhost/superfood/public/';
 
@@ -13,9 +14,16 @@ function test_input($data)
     return $data;
 }
 
-function getCategory($parent_id): string
+function getNewsCategory($parent_id): string
 {
     $data = NewsCategories::all();
+    $recursive = new CategoriesRecursive($data);
+    return $recursive->categoriesRecursive($parent_id);
+}
+
+function getProductCategory($parent_id): string
+{
+    $data = ProductCategories::all();
     $recursive = new CategoriesRecursive($data);
     return $recursive->categoriesRecursive($parent_id);
 }

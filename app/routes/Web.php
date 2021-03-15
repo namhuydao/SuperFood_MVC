@@ -61,5 +61,40 @@ $router->map('POST','/superFood/admin/resetPassword/store','App\Controllers\Admi
 
 $router->map('GET','/superFood/admin/activeAccount/update/[i:id]','App\Controllers\AdminAccountController@update','updateActiveAccount');
 
+$router->map('GET','/superFood/admin/product','App\Controllers\AdminProductController@index','indexProduct');
+$router->map('GET','/superFood/admin/product/create','App\Controllers\AdminProductController@create','createProduct');
+$router->map('POST','/superFood/admin/product/store','App\Controllers\AdminProductController@store','storeProduct');
+$router->map('GET','/superFood/admin/product/edit/[i:id]','App\Controllers\AdminProductController@edit','editProduct');
+$router->map('POST','/superFood/admin/product/update/[i:id]','App\Controllers\AdminProductController@update','updateProduct');
+$router->map('GET','/superFood/admin/product/delete/[i:id]','App\Controllers\AdminProductController@delete','deleteProduct');
 
 
+$router->map('GET','/superFood/admin/productTags','App\Controllers\AdminProductTagsController@index','indexProductTags');
+$router->map('GET','/superFood/admin/productTags/create','App\Controllers\AdminProductTagsController@create','createProductTags');
+$router->map('POST','/superFood/admin/productTags/store','App\Controllers\AdminProductTagsController@store','storeProductTags');
+$router->map('GET','/superFood/admin/productTags/edit/[i:id]','App\Controllers\AdminProductTagsController@edit','editProductTags');
+$router->map('POST','/superFood/admin/productTags/update/[i:id]','App\Controllers\AdminProductTagsController@update','updateProductTags');
+$router->map('GET','/superFood/admin/productTags/delete/[i:id]','App\Controllers\AdminProductTagsController@delete','deleteProductTags');
+
+$router->map('GET','/superFood/admin/productCategories','App\Controllers\AdminProductCategoriesController@index','indexProductCategories');
+$router->map('GET','/superFood/admin/productCategories/create','App\Controllers\AdminProductCategoriesController@create','createProductCategories');
+$router->map('POST','/superFood/admin/productCategories/store','App\Controllers\AdminProductCategoriesController@store','storeProductCategories');
+$router->map('GET','/superFood/admin/productCategories/edit/[i:id]','App\Controllers\AdminProductCategoriesController@edit','editProductCategories');
+$router->map('POST','/superFood/admin/productCategories/update/[i:id]','App\Controllers\AdminProductCategoriesController@update','updateProductCategories');
+$router->map('GET','/superFood/admin/productCategories/delete/[i:id]','App\Controllers\AdminProductCategoriesController@delete','deleteProductCategories');
+
+$router->map('GET','/superFood/admin/animation','App\Controllers\AdminAnimationController@index','indexAnimation');
+$router->map('GET','/superFood/admin/animation/create','App\Controllers\AdminAnimationController@create','createAnimation');
+$router->map('POST','/superFood/admin/animation/store','App\Controllers\AdminAnimationController@store','storeAnimation');
+$router->map('GET','/superFood/admin/animation/edit/[i:id]','App\Controllers\AdminAnimationController@edit','editAnimation');
+$router->map('POST','/superFood/admin/animation/update/[i:id]','App\Controllers\AdminAnimationController@update','updateAnimation');
+$router->map('GET','/superFood/admin/animation/delete/[i:id]','App\Controllers\AdminAnimationController@delete','deleteAnimation');
+
+$router->map('GET','/superFood/admin/widget','App\Controllers\AdminWidgetController@index','indexWidget');
+$router->map('GET','/superFood/admin/widget/create','App\Controllers\AdminWidgetController@create','createWidget');
+$router->map('POST','/superFood/admin/widget/store','App\Controllers\AdminWidgetController@store','storeWidget');
+$router->map('GET','/superFood/admin/widget/edit/[i:id]','App\Controllers\AdminWidgetController@edit','editWidget');
+$router->map('POST','/superFood/admin/widget/update/[i:id]','App\Controllers\AdminWidgetController@update','updateWidget');
+$router->map('GET','/superFood/admin/widget/delete/[i:id]','App\Controllers\AdminWidgetController@delete','deleteWidget');
+
+$router->map('GET','/superFood/site/home','App\Controllers\SiteHomeController@index','indexHome');

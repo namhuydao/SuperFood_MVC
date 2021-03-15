@@ -23,7 +23,7 @@ class AdminNewsCategoriesController extends Controller
      * Example : Product::create($data)
      */
     public function create(){
-        $html = getCategory($parent_id = 0);
+        $html = getNewsCategory($parent_id = 0);
         Blade::render('admin/news_categories/add', compact('html'));
     }
     /**

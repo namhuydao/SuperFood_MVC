@@ -30,19 +30,23 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="role__right">
-                                    {{$code = ''}}
+                                    @php($code = '')
                                     @foreach ($permissions as $permission)
-                                        @php $module_name = @explode('_', $permission->code)[0] @endphp
+                                        @php($module_name = @explode('_', $permission->code)[0])
                                         @if ($module_name != $code)
-                                            @php $code = $module_name @endphp
+                                            @php($code = $module_name)
                                             @if ($module_name === "post")
-                                                @php $module_name = "Bài viết" @endphp
+                                                @php( $module_name = "Bài viết" )
                                             @elseif ($module_name === "product")
-                                                @php $module_name = "Sản phẩm" @endphp
+                                                @php($module_name = "Sản phẩm")
                                             @elseif ($module_name === "role")
-                                                @php $module_name = "Quyền" @endphp
+                                                @php($module_name = "Quyền")
                                             @elseif ($module_name === "user")
-                                                @php $module_name = "Người dùng" @endphp
+                                                @php($module_name = "Người dùng")
+                                            @elseif ($module_name === "animation")
+                                                @php($module_name = "Hiệu ứng")
+                                            @elseif ($module_name === "widget")
+                                                @php($module_name = "Widget")
                                             @endif
                                             <label class='perChecked' style="margin-top: 30px">
                                                 <input
@@ -55,9 +59,9 @@
                                         <label style="display: inline-block; width: 100%; margin-left: 20px">
                                             <input style="margin-right: 5px;" name="pers[]"
                                                    type="checkbox"
-                                                   @php $pers_checked = []; @endphp
+                                                   @php($pers_checked = [])
                                                    @foreach($role_permissions as $role_permission)
-                                                   @php $pers_checked[] = $role_permission->permission_id; @endphp
+                                                   @php($pers_checked[] = $role_permission->permission_id)
                                                    @endforeach
                                                    @if (in_array($permission->id, $pers_checked))
                                                    checked
