@@ -3,10 +3,11 @@
 use App\components\CategoriesRecursive;
 use App\NewsCategories;
 use App\ProductCategories;
+use JetBrains\PhpStorm\Pure;
 
 const BASE_URL = 'http://localhost/superfood/public/';
 
-function test_input($data)
+#[Pure] function test_input($data): string
 {
     $data = trim($data);
     $data = stripslashes($data);
