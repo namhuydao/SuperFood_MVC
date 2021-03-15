@@ -28,7 +28,8 @@ function getProductCategory($parent_id): string
     return $recursive->categoriesRecursive($parent_id);
 }
 
-function uploadFile($file, $path) {
+function uploadFile($file, $path): string
+{
     $base_folder = 'backend/assets/images';
 
     //  Lấy tên file
@@ -49,7 +50,7 @@ function uploadFile($file, $path) {
     return $dir_name . '/' . $file_name_insert;
 }
 
-function checkPer($user_id, $per_code)
+function checkPer($user_id, $per_code): bool
 {
     $users = \App\Users::all();
     $roles = \App\Roles::all();
