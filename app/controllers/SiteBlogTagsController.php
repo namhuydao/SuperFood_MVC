@@ -4,13 +4,14 @@ namespace App\controllers;
 
 use App\Blade\Blade;
 use App\database\Database;
-use App\Users;
+use App\LinkNewsTags;
+use App\NewsCategories;
+use App\Widget;
 
 new Database;
 
-class AdminResetPasswordController extends Controller
+class SiteBlogTagsController extends Controller
 {
-
     /**
      * @function index()
      * List All data from database
@@ -18,6 +19,18 @@ class AdminResetPasswordController extends Controller
      */
     public function index()
     {
+        $id = $_GET['id'];
+        $categories = NewsCategories::all();
+        $widgets = Widget::all();
+
+        $newsCounts = LinkNewsTags::where('tag_id', $id)->get();
+        $news_with_tag = [];
+        foreach ($newsCounts as $newsCount){
+            $news_with_tag[] = $newsCount->news_id;
+        }
+
+        $newsCount = count((array) $news_with_tag);
+        Blade::render('site/main/pages/blog_tags', compact('newsCount', 'widgets', 'categories', 'id', 'news_with_tag'));
     }
 
     /**
@@ -28,8 +41,20 @@ class AdminResetPasswordController extends Controller
      */
     public function create()
     {
-        $email = $_GET['email'];
-        Blade::render('admin/password/reset', compact('email'));
+        $newsCounts = LinkNewsTags::where('tag_id', $_GET['id'])->get();
+        $news_with_tag = [];
+        foreach ($newsCounts as $newsCount){
+            $news_with_tag[] = $newsCount->news_id;
+        }
+        $page = $_GET['page'];
+        $per_page = $_GET['per_page'];
+
+        $so_trang_bo_qua = (int)$page - 1;
+        $so_ban_ghi_bo_qua = $so_trang_bo_qua * (int)$per_page;
+        $categories = NewsCategories::all();
+
+        $news = \App\News::whereIn('id', $news_with_tag)->orderBy('id', 'desc')->skip($so_ban_ghi_bo_qua)->limit($per_page)->get();
+        Blade::render('site/main/paginations/blog_tags_pagination', compact('news', 'categories'));
     }
 
     /**
@@ -40,25 +65,6 @@ class AdminResetPasswordController extends Controller
      */
     public function store()
     {
-        $email = $_POST['emailReset'];
-        $newPass = test_input($_POST['newPassword']);
-        $confirm = test_input($_POST['confirmPassword']);
-        $ok = 1;
-        if($newPass !== $confirm){
-            $ok = 0;
-        }
-        if (!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[0-9a-zA-Z\d]{8,}$/", $newPass)){
-            $ok = 0;
-        }
-        if ($ok === 1){
-            Users::where('email', $email)->update([
-                'password' => md5($newPass)
-            ]);
-            header('Location: /superFood/admin/login');
-        }else{
-            echo "<script>alert('Không thành công!'); window.location='/superFood/admin/resetPassword/create?email=$email'; </script>";
-        }
-
     }
 
     /**
@@ -67,7 +73,6 @@ class AdminResetPasswordController extends Controller
      * Type id : number
      * Get id from URl
      * Example : Product::find($id)
-     * @param $id
      */
     public function show($id)
     {
@@ -80,16 +85,13 @@ class AdminResetPasswordController extends Controller
      * Get id from URL
      * Type data : Array
      * Example : Product::find($id)->update($data)
-     * @param $id
      */
     public function update($id)
     {
-
     }
 
     public function edit($id)
     {
-
     }
 
     /**
@@ -97,9 +99,10 @@ class AdminResetPasswordController extends Controller
      * Delete data with id
      * Type id : number
      * Example : Product::delete()
-     * @param $id
      */
     public function delete($id)
     {
     }
 }
+
+

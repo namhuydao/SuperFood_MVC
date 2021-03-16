@@ -78,5 +78,4 @@ function checkPer($user_id, $per_code): bool
             }
         }
         return false;
-
 }

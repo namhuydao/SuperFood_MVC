@@ -44,7 +44,6 @@
                             <div class="form-group">
                                 <label for="newsCategoryAdd">Danh mục:</label>
                                 <select name="newsCategoryAdd" id="newsCategoryAdd" class="form-control">
-                                    <option value="0">Chọn làm danh mục cha:</option>
                                     {!! $html !!}
                                 </select>
                             </div>
@@ -63,3 +62,4 @@
         </div>
     </div>
 @endsection
+

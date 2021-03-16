@@ -98,3 +98,18 @@ $router->map('POST','/superFood/admin/widget/update/[i:id]','App\Controllers\Adm
 $router->map('GET','/superFood/admin/widget/delete/[i:id]','App\Controllers\AdminWidgetController@delete','deleteWidget');
 
 $router->map('GET','/superFood/site/home','App\Controllers\SiteHomeController@index','indexHome');
+$router->map('GET','/superFood/site/about','App\Controllers\SiteAboutController@index','indexAbout');
+$router->map('GET','/superFood/site/contact','App\Controllers\SiteContactController@index','indexContact');
+$router->map('GET','/superFood/site/service','App\Controllers\SiteServiceController@index','indexService');
+$router->map('GET','/superFood/site/blog','App\Controllers\SiteBlogController@index','indexBlog');
+$router->map('GET','/superFood/site/blog_details/[i:id]','App\Controllers\SiteBlogController@show','indexBlogDetails');
+$router->map('GET','/superFood/site/blog_paginate','App\Controllers\SiteBlogController@create','indexBlogPaginate');
+
+$router->map('GET','/superFood/site/blog_categories','App\Controllers\SiteBlogCategoriesController@index','indexBlogCategories');
+$router->map('GET','/superFood/site/blog_categories_paginate','App\Controllers\SiteBlogCategoriesController@create','indexBlogCategoriesPaginate');
+
+$router->map('GET','/superFood/site/blog_tags','App\Controllers\SiteBlogTagsController@index','indexBlogTags');
+$router->map('GET','/superFood/site/blog_tags_paginate','App\Controllers\SiteBlogTagsController@create','indexBlogTagsPaginate');
+
+$router->map('GET','/superFood/site/blog_search','App\Controllers\SiteBlogSearchController@index','indexBlogSearch');
+$router->map('GET','/superFood/site/blog_search_paginate','App\Controllers\SiteBlogSearchController@create','indexBlogSearchPaginate');

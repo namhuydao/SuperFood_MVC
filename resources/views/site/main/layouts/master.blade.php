@@ -63,6 +63,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <!-- Main JS-->
 <script src="{{BASE_URL.'frontend/assets/js/main.js'}}"></script>
+@yield('script')
 </body>
 
 

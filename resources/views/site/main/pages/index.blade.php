@@ -14,23 +14,24 @@
             @foreach($widgets as $widget)
                 @if($widget->location == 'slider-item')
                     @php($count++)
-            <div class="slider__item">
-                <div class="slider__item-background background-left animate__animated animate__{{$animation_arr[$count - 1]['images']}} wow">
-                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
-                </div>
-                <div class="container h-100">
-                    <div class="slider__item-content animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow" data-wow-delay="{{$animation_arr[$count - 1]['animation_delay']}}">
-                        <div class="content__image">
-                            <img src="{{BASE_URL.'frontend/assets/images/layout/item-1.png'}}" alt=""/>
+                    <div class="slider__item">
+                        <div class="slider__item-background background-left animate__animated animate__{{$animation_arr[$count - 1]['images']}} wow">
+                            <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
                         </div>
-                        <div class="content__title">{{$widget->title}}</div>
-                        <p class="content__text">
-                            {{$widget->description}}
-                        </p>
-                        <a class="btn btn-color" href="#">Read More</a>
+                        <div class="container h-100">
+                            <div class="slider__item-content animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow"
+                                 data-wow-delay="{{$animation_arr[$count - 1]['animation_delay']}}">
+                                <div class="content__image">
+                                    <img src="{{BASE_URL.'frontend/assets/images/layout/item-1.png'}}" alt=""/>
+                                </div>
+                                <div class="content__title">{{$widget->title}}</div>
+                                <p class="content__text">
+                                    {{$widget->description}}
+                                </p>
+                                <a class="btn btn-color" href="#">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
                 @endif
             @endforeach
         </div>
@@ -273,154 +274,70 @@
     <div class="counter">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="counter__box animate__animated animate__zoomIn wow" data-wow-delay="1s">
-                        <div class="counter__box-image">
-                            <img src="/superFood/frontend/assets/images/home/counter-1.png" alt=""/>
+                @php($animation_arr = [])
+                @foreach($animations as $animation)
+                    @if($animation->location == 'counter-item')
+                        @php($animation_arr[] = $animation)
+                    @endif
+                @endforeach
+                @php($count = 0)
+                @foreach($widgets as $widget)
+                    @if($widget->location == 'counter-item')
+                        @php($count++)
+                        <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="counter__box animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow"
+                                 data-wow-delay="{{$animation_arr[$count - 1]['animation_delay']}}">
+                                <div class="counter__box-image">
+                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                                </div>
+                                <div class="counter__box-item">
+                                    <span class="perccent-item-num counters" data-target="{{$widget->number}}">0</span>
+                                    <div class="item__title">{{$widget->title}}</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="counter__box-item">
-                            <span class="perccent-item-num counters" data-target="9859">0</span>
-                            <div class="item__title">Team energy left</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="counter__box animate__animated animate__zoomIn wow" data-wow-delay="1s">
-                        <div class="counter__box-image">
-                            <img src="/superFood/frontend/assets/images/home/counter-2.png" alt=""/>
-                        </div>
-                        <div class="counter__box-item">
-                            <span class="perccent-item-num counters" data-target="8197">0</span>
-                            <div class="item__title">Lines of code</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="counter__box animate__animated animate__zoomIn wow" data-wow-delay="1s">
-                        <div class="counter__box-image">
-                            <img src="/superFood/frontend/assets/images/home/counter-3.png" alt=""/>
-                        </div>
-                        <div class="counter__box-item">
-                            <span class="perccent-item-num counters" data-target="1143">0</span>
-                            <div class="item__title">Awesome Projects</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="counter__box animate__animated animate__zoomIn wow" data-wow-delay="1s">
-                        <div class="counter__box-image">
-                            <img src="/superFood/frontend/assets/images/home/counter-4.png" alt=""/>
-                        </div>
-                        <div class="counter__box-item">
-                            <span class="perccent-item-num counters" data-target="2177">0</span>
-                            <div class="item__title">Cups of coffe</div>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>
     <!-- End Counter-->
-    <!-- Start Testimonials-->
-    <div class="testimonials">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8 mx-auto text-center animate__animated animate__zoomIn wow"
-                     data-wow-delay="0.5s">
-                    <h2 class="title__heading">Testimonials</h2>
-                    <div class="divider mx-auto"></div>
-                    <p class="title__text">
-                        At vero eos et accusam et justo duo dolores et ea rebum. Stet
-                        clita kasd gubergren, no sea takimata sanctus est Lorem.
-                    </p>
-                </div>
-            </div>
-            <div class="owl-testimonials owl-carousel owl-theme animate__animated animate__zoomIn wow"
-                 data-wow-delay="1s">
-                <div class="testimonials__box">
-                    <div class="testimonials__box-item">
-                        <p class="item__text">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium natus error sit volu ptatem omnis. Sed ut
-                            perspiciatis unde omnis iste natus errorsit voluptatem
-                            accusantium.
-                        </p>
-                        <div class="item__info">
-                            <div class="item__info-image">
-                                <img src="/superFood/frontend/assets/images/layout/testimonials-1.jpg" alt=""/>
-                            </div>
-                            <div class="item__info-content">
-                                <div class="content__name">Sara Newman</div>
-                                <div class="content__position">Manager</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonials__box">
-                    <div class="testimonials__box-item">
-                        <p class="item__text">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium natus error sit volu ptatem omnis. Sed ut
-                            perspiciatis unde omnis iste natus errorsit voluptatem
-                            accusantium.
-                        </p>
-                        <div class="item__info">
-                            <div class="item__info-image">
-                                <img src="/superFood/frontend/assets/images/layout/testimonials-2.jpg" alt=""/>
-                            </div>
-                            <div class="item__info-content">
-                                <div class="content__name">James Newbie</div>
-                                <div class="content__position">Docter</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonials__box">
-                    <div class="testimonials__box-item">
-                        <p class="item__text">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium natus error sit volu ptatem omnis. Sed ut
-                            perspiciatis unde omnis iste natus errorsit voluptatem
-                            accusantium.
-                        </p>
-                        <div class="item__info">
-                            <div class="item__info-image">
-                                <img src="/superFood/frontend/assets/images/layout/testimonials-3.jpg" alt=""/>
-                            </div>
-                            <div class="item__info-content">
-                                <div class="content__name">David Harrison</div>
-                                <div class="content__position">Artist</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Testimonials-->
+@include('site.main.components.testimonials')
     <!-- Start Contact-->
     <div class="contact">
+        @php($animation_arr = [])
+        @foreach($animations as $animation)
+            @if($animation->location == 'contact-item')
+                @php($animation_arr[] = $animation)
+            @endif
+        @endforeach
+        @php($count = 0)
+        @foreach($widgets as $widget)
+            @if($widget->location == 'contact-item')
+                @php($count++)
         <div class="contact__background">
-            <img src="/superFood/frontend/assets/images/layout/contact.jpg" alt=""/>
+            <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-8 col-md-8">
-                    <div class="contact__content text-sm-left animate__animated animate__fadeInLeft wow">
+                    <div class="contact__content text-sm-left animate__animated animate__{{$animation_arr[$count - 1]['description']}} wow">
                         <div class="contact__content-text">
-                            Tìm kiếm sản phẩm chất lượng, đảm bảo sức khỏe!
+                            {{$widget->description}}
                         </div>
                         <div class="divider"></div>
                     </div>
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 my-sm-auto">
-                    <div class="contact__button text-sm-right animate__animated animate__fadeInUp wow"
-                         data-wow-delay="1s">
-                        <a class="btn btn-color" href="#">Liên hệ ngay</a>
+                    <div class="contact__button text-sm-right animate__animated animate__{{$animation_arr[$count - 1]['link']}} wow"
+                         data-wow-delay="{{$animation_arr[$count - 1]['link_delay']}}">
+                        <a class="btn btn-color" href="#">{{$widget->title}}</a>
                     </div>
                 </div>
             </div>
         </div>
+            @endif
+        @endforeach
     </div>
     <!-- End Contact-->
 @endsection

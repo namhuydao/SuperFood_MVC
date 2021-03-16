@@ -42,11 +42,16 @@ class AdminPasswordController extends Controller
     {
         $mail = test_input($_POST['emailForgot']);
         $user_mail = Users::where('email', $mail)->get();
+        if (!$user_mail->isEmpty()){
+            $content = 'Đặt lại mật khẩu' . '<br>' .
+                'Click vào đây để đặt lại mật khẩu <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/resetPassword/create?email=' . $mail . '">Đặt lại mật khẩu</a>';
 
-        $content = 'Đặt lại mật khẩu' . '<br>' .
-            'Click vào đây để đặt lại mật khẩu <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/resetPassword/create?email=' . $mail . '">Đặt lại mật khẩu</a>';
+            Mail::send($mail, $user_mail[0]->firstname, 'Mật khẩu mới của bạn!', $content);
+        }
+        else{
+            echo "<script>alert('Ko có Email nào như vậy'); window.location = '/superFood/admin/forgotPassword/create';</script>";
 
-        Mail::send($mail, $user_mail[0]->firstname, 'Mật khẩu mới của bạn!', $content);
+        }
         echo "<script>alert('Vui lòng kiểm tra Email của bạn'); window.location = '/superFood/admin/forgotPassword/create';</script>";
     }
 
