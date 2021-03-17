@@ -68,7 +68,12 @@ body {
     color: #808285;
     background-color: #fff
 }
-
+#loader{
+    display: none;
+}
+#loader.show{
+    display: block;
+}
 .wrapper {
     overflow: hidden
 }

@@ -189,4 +189,14 @@ $(function () {
             400
         );
     });
+
+    $(document).ajaxStart(function(){
+        // Show image container
+        $("#loader").add('show');
+    });
+    $(document).ajaxComplete(function(){
+        // Hide image container
+        $("#loader").remove('show');
+    });
+
 });

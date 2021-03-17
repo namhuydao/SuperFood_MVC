@@ -21,6 +21,11 @@
             <div class="row">
                 <div class="col-lg-8 col-xl-9">
                     <div class="blog__content">
+                        <!-- Image loader -->
+                        <div id='loader'>
+                            <img src='/superFood/frontend/assets/images/ajax-loader.gif' width='32px' height='32px'>
+                        </div>
+                        <!-- Image loader -->
                         <?php
                         $per_page = 2;
                         $news = \App\News::orderBy('id', 'desc')->limit($per_page)->get();
@@ -64,11 +69,14 @@
                 page: nut_phan_trang,
                 per_page: '<?php echo $per_page;?>',
             },
+            beforeSend: function(){
+                $("#loader").add('show');
+            },
             success: function (resp) {
                 $('.blog__content').html(resp);
             },
-            error: function () {
-                alert('goi ajax that bai');
+            complete:function(data){
+                $("#loader").remove('show');
             }
         });
     })
