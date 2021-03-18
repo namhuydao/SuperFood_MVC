@@ -42,12 +42,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="productBasePriceUpdate">Giá gốc:</label>
-                                <input value="{{number_format($product->base_price), 0}}" type="number" name="productBasePriceUpdate"
+                                <input value="{{$product->base_price}}" type="number" name="productBasePriceUpdate"
                                        class="form-control" id="productBasePriceUpdate">
                             </div>
                             <div class="form-group">
                                 <label for="productDiscountPriceUpdate">Giá ưu đãi:</label>
-                                <input value="{{number_format($product->discount_price, 0)}}" type="number" name="productDiscountPriceUpdate"
+                                <input value="{{$product->discount_price}}" type="number" name="productDiscountPriceUpdate"
                                        class="form-control" id="productDiscountPriceUpdate">
                             </div>
                             <label for="productThumbnailsAdd">Thumbnails:</label>

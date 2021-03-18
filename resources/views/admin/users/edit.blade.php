@@ -48,7 +48,7 @@
                             <select name="role_id" class="form-control" id="userRoleUpdate">
                                 <option value=""></option>
                                 @foreach($roles as $role)
-                                    <option @php if ($role->id == $user->role_id) echo 'selected' @endphp value="{{$role->id}}">{{$role->name}}</option>
+                                    <option @if($role->id == $user->role_id) selected @endif value="{{$role->id}}">{{$role->name}}</option>
                                 @endforeach
                             </select>
                         </div>

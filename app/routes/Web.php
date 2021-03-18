@@ -113,3 +113,11 @@ $router->map('GET','/superFood/site/blog_tags_paginate','App\Controllers\SiteBlo
 
 $router->map('GET','/superFood/site/blog_search','App\Controllers\SiteBlogSearchController@index','indexBlogSearch');
 $router->map('GET','/superFood/site/blog_search_paginate','App\Controllers\SiteBlogSearchController@create','indexBlogSearchPaginate');
+
+$router->map('GET','/superFood/site/product','App\Controllers\SiteProductController@index','indexSiteProduct');
+$router->map('GET','/superFood/site/product/addToCart/[i:id]','App\Controllers\SiteProductController@addToCart','addToCart');
+$router->map('GET','/superFood/site/product/deleteCart','App\Controllers\SiteProductController@deleteCart','deleteCart');
+$router->map('GET','/superFood/site/product/delete/[i:id]','App\Controllers\SiteProductController@delete','deleteCartProduct');
+$router->map('GET','/superFood/site/product/add/[i:id]','App\Controllers\SiteProductController@add','addCartProduct');
+$router->map('GET','/superFood/site/product/remove/[i:id]','App\Controllers\SiteProductController@remove','removeCartProduct');
+

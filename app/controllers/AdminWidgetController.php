@@ -35,6 +35,7 @@ class AdminWidgetController extends Controller
         $location = test_input($_POST['location_addWidget']);
         $title = test_input($_POST['title_addWidget']);
         $description = test_input($_POST['description_addWidget']);
+        $content = test_input($_POST['content_addWidget']);
         $link = test_input($_POST['link_addWidget']);
         $number = test_input($_POST['number_addWidget']);
         $author = test_input($_POST['author_addWidget']);
@@ -45,6 +46,7 @@ class AdminWidgetController extends Controller
             $widget = Widget::create([
                 'title' => $title,
                 'description' => $description,
+                'content' => $content,
                 'location' => $location,
                 'author' => $author,
                 'link' => $link,
@@ -56,6 +58,7 @@ class AdminWidgetController extends Controller
             $widget = Widget::create([
                 'title' => $title,
                 'description' => $description,
+                'content' => $content,
                 'location' => $location,
                 'author' => $author,
                 'link' => $link,
@@ -90,6 +93,7 @@ class AdminWidgetController extends Controller
         $location = test_input($_POST['location_editWidget']);
         $title = test_input($_POST['title_editWidget']);
         $description = test_input($_POST['description_editWidget']);
+        $content = test_input($_POST['content_editWidget']);
         $link = test_input($_POST['link_editWidget']);
         $number = test_input($_POST['number_editWidget']);
         $author = test_input($_POST['author_editWidget']);
@@ -98,6 +102,7 @@ class AdminWidgetController extends Controller
         $widget = Widget::find($id['id'])->update([
             'title' => $title,
             'description' => $description,
+            'content' => $content,
             'location' => $location,
             'author' => $author,
             'link' => $link,

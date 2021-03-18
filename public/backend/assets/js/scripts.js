@@ -48,6 +48,8 @@ CKEDITOR.replace('newsContentAdd');
 CKEDITOR.replace('newsContentUpdate');
 CKEDITOR.replace('productContentAdd');
 CKEDITOR.replace('productContentUpdate');
+CKEDITOR.replace('content_addWidget');
+CKEDITOR.replace('content_editWidget');
 
 $(document).ready(function () {
     $( "a.news_delete" ).click(function( event ) {

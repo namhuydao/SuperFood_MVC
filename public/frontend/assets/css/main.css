@@ -71,9 +71,7 @@ body {
 #loader{
     display: none;
 }
-#loader.show{
-    display: block;
-}
+
 .wrapper {
     overflow: hidden
 }

@@ -23,6 +23,7 @@
                 <div class="blog__content">
                     <?php
                     $per_page = 2;
+                    $allNews = \App\News::where('category_id', $id)->get();
                     $news = \App\News::where('category_id', $id)->orderBy('id', 'desc')->limit($per_page)->get();
                     ?>
                     @include('site.main.components.blog_item')

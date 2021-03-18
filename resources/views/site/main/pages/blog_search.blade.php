@@ -23,6 +23,11 @@
                     <div class="blog__content">
                         <?php
                         $per_page = 2;
+                        $allNews = App\News::where('content', 'like', $search)
+                            ->orWhere('title','like', $search)
+                            ->orWhere('description', 'like', $search)
+                            ->orWhere('author', 'like', $search)
+                            ->get();
                         $news = App\News::where('content', 'like', $search)
                             ->orWhere('title','like', $search)
                             ->orWhere('description', 'like', $search)

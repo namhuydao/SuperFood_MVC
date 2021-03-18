@@ -37,6 +37,11 @@
                                    class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="content_addWidget">Nội dung:</label>
+                            <input type="text" name="content_addWidget" id="content_addWidget"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="link_addWidget">Link:</label>
                             <input type="text" name="link_addWidget" id="link_addWidget" class="form-control">
                         </div>

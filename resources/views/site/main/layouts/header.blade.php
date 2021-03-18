@@ -3,6 +3,11 @@
 {{--    <div class="preLoader__image"><img src="/superFood/frontend/assets/images/layout/leaf.png" alt=""></div>--}}
 {{--</div>--}}
 <!-- End PreLoader-->
+<!-- Image loader -->
+<div id='loader'>
+    <img src='/superFood/frontend/assets/images/ajax-loader.gif' width='32px' height='32px'>
+</div>
+<!-- Image loader -->
 <!-- Start Header-->
 <div class="overlay-header"><span class="close-overlay"><i class="fal fa-times"></i></span></div>
 <div class="header">
@@ -23,6 +28,7 @@
                     <li class="list__item"><a class="list__item-link" href="/superFood/site/about">Giới thiệu</a></li>
                     <li class="list__item"><a class="list__item-link" href="/superFood/site/service">Dịch vụ</a></li>
                     <li class="list__item"><a class="list__item-link" href="/superFood/site/blog">Tin tức</a></li>
+                    <li class="list__item"><a class="list__item-link" href="/superFood/site/product">Sản phẩm</a></li>
                     <li class="list__item"><a class="list__item-link" href="/superFood/site/contact">Liên hệ</a></li>
                     <li class="list__item">
                         <form class="list__item-form">

@@ -37,6 +37,11 @@
                                    class="form-control">
                         </div>
                         <div class="form-group">
+                            <label for="content_editWidget">Nội dung:</label>
+                            <input type="text" name="content_editWidget" id="content_editWidget"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="link_editWidget">Link:</label>
                             <input value="{{$widget->link}}" type="text" name="link_editWidget" id="link_editWidget" class="form-control">
                         </div>
