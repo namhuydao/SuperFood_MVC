@@ -132,4 +132,9 @@ class SiteProductController extends Controller
         }
         header('Location: /superFood/site/product');
     }
+    public function checkout()
+    {
+        $widgets = Widget::all();
+        Blade::render('site/main/pages/checkout', compact('widgets'));
+    }
 }

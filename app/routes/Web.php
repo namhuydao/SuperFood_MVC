@@ -121,3 +121,4 @@ $router->map('GET','/superFood/site/product/delete/[i:id]','App\Controllers\Site
 $router->map('GET','/superFood/site/product/add/[i:id]','App\Controllers\SiteProductController@add','addCartProduct');
 $router->map('GET','/superFood/site/product/remove/[i:id]','App\Controllers\SiteProductController@remove','removeCartProduct');
 
+$router->map('GET','/superFood/site/product/checkout','App\Controllers\SiteProductController@checkout','checkout');
