@@ -83,16 +83,16 @@ class AdminRegistrationController extends Controller
                 Tài khoản của bạn là :<br>
                 username: ' . $email . '<br>' .
                     'password: ' . $password . '<br>' .
-                    'Click vào đây để kích hoạt tài khoản <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/activeAccount/update/'. $register->id . '?time=' . $time .'">Kích hoạt tài khoản</a>';
+                    'Click vào đây để kích hoạt tài khoản <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood_MVC/admin/activeAccount/update/'. $register->id . '?time=' . $time .'">Kích hoạt tài khoản</a>';
 
                 //  Gửi email thông báo tạo tài khoảng thành công
                 Mail::send($email, $firstname, 'Đăng ký tài khoản thành công!', $content);
-                echo "<script>alert('Đăng ký thành công'); window.location= '/superFood/admin/register';</script>";
+                echo "<script>alert('Đăng ký thành công'); window.location= '/superFood_MVC/admin/register';</script>";
             } else {
-                echo "<script>alert('Đăng ký không thành công'); window.location= '/superFood/admin/register';</script>";
+                echo "<script>alert('Đăng ký không thành công'); window.location= '/superFood_MVC/admin/register';</script>";
             }
         }else{
-            echo "<script>alert('Đăng ký không thành công, '); window.location= '/superFood/admin/register';</script>";
+            echo "<script>alert('Đăng ký không thành công, '); window.location= '/superFood_MVC/admin/register';</script>";
         }
     }
 

@@ -80,7 +80,7 @@ class SiteProductController extends Controller
         unset($_SESSION["qty"][$id['id']]);
         unset($_SESSION["cart"][$id['id']]);
 
-        header('Location: /superFood/site/product');
+        header('Location: /superFood_MVC/site/product');
     }
     public function addToCart($id)
     {
@@ -89,7 +89,7 @@ class SiteProductController extends Controller
         $_SESSION["amounts"][$id['id']] = $product->discount_price * $qty;
         $_SESSION["cart"][$id['id']] = $id['id'];
         $_SESSION["qty"][$id['id']] = $qty;
-        header('Location: /superFood/site/product');
+        header('Location: /superFood_MVC/site/product');
     }
     public function deleteCart()
     {
@@ -97,7 +97,7 @@ class SiteProductController extends Controller
         unset($_SESSION["amounts"]); //The amount from each product
         unset($_SESSION["total"]); //The total cost
         unset($_SESSION["cart"]); //Which item has been chosen
-        header('Location: /superFood/site/product');
+        header('Location: /superFood_MVC/site/product');
     }
 
     public function add($id)
@@ -113,7 +113,7 @@ class SiteProductController extends Controller
         {
             $_SESSION["amounts"][$id['id']] = $product->discount_price * $qty;
         }
-        header('Location: /superFood/site/product');
+        header('Location: /superFood_MVC/site/product');
     }
     public function remove($id)
     {
@@ -130,7 +130,7 @@ class SiteProductController extends Controller
                 $_SESSION["amounts"][$id['id']] = $product->discount_price * $qty;
             }
         }
-        header('Location: /superFood/site/product');
+        header('Location: /superFood_MVC/site/product');
     }
     public function checkout()
     {

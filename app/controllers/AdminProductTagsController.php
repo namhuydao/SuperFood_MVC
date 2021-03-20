@@ -37,10 +37,10 @@ class AdminProductTagsController extends Controller
             'name' => $name
         ]);
         if($tag){
-            header('Location:/superFood/admin/productTags');
+            header('Location:/superFood_MVC/admin/productTags');
         }
         else{
-            echo "<script>alert('Thêm Tag thất bại'); window.location= '/superFood/admin/productTags';</script>";
+            echo "<script>alert('Thêm Tag thất bại'); window.location= '/superFood_MVC/admin/productTags';</script>";
         }
     }
     /**
@@ -66,10 +66,10 @@ class AdminProductTagsController extends Controller
             'name' => $name
         ]);
         if($tag){
-            header('Location:/superFood/admin/productTags');
+            header('Location:/superFood_MVC/admin/productTags');
         }
         else{
-            echo "<script>alert('Sửa Tag thất bại'); window.location= '/superFood/admin/productTags';</script>";
+            echo "<script>alert('Sửa Tag thất bại'); window.location= '/superFood_MVC/admin/productTags';</script>";
         }
     }
 
@@ -86,6 +86,6 @@ class AdminProductTagsController extends Controller
      */
     public function delete($id){
         ProductTags::destroy($id);
-        header('Location:/superFood/admin/productTags');
+        header('Location:/superFood_MVC/admin/productTags');
     }
 }

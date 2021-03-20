@@ -21,7 +21,7 @@
                                     </p>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/superFood/admin/users">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="/superFood_MVC/admin/users">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -36,7 +36,7 @@
                                         <i style="padding-left: 10px" class="fad fa-newspaper"></i>
                                     </p></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/superFood/admin/news">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="/superFood_MVC/admin/news">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -51,7 +51,7 @@
                                         <i style="padding-left: 10px" class="fad fa-shopping-bag"></i>
                                     </p></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/superFood/admin/product">Xem thông tin chi
+                                    <a class="small text-white stretched-link" href="/superFood_MVC/admin/product">Xem thông tin chi
                                         tiết</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
@@ -103,7 +103,7 @@
                                     <tbody>
                                     @foreach($news as $key => $news_item)
                                         <tr>
-                                            <td class="text-center"><img src="/superFood/backend/assets/images/{{ $news_item->image }}" alt="" width="100" height="100"></td>
+                                            <td class="text-center"><img src="/superFood_MVC/backend/assets/images/{{ $news_item->image }}" alt="" width="100" height="100"></td>
                                             <td>{{$news_item->title}}</td>
                                             <td>{{$news_item->description}}</td>
                                             <td>{{$news_item->author}}</td>

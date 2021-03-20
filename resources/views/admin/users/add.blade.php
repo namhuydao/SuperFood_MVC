@@ -1,5 +1,5 @@
 @if(!checkPer($_SESSION['user']['id'], 'user_add'))
-    @php(header('Location: /superFood/admin/dashboard'))
+    @php(header('Location: /superFood_MVC/admin/dashboard'))
 @endif
 @extends('admin.layouts.master')
 @section('title'){{'Add Users'}}@endsection
@@ -11,14 +11,14 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Quản lý người dùng</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood_MVC/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thêm người dùng</li>
                     </ol>
                 </div>
                 <div style="width: 40%; margin: auto">
-                    <form action="/superFood/admin/users/store" method="POST" enctype="multipart/form-data">
+                    <form action="/superFood_MVC/admin/users/store" method="POST" enctype="multipart/form-data">
                         <div class="form-group position-relative text-center">
-                            <img class="imagesForm" width="100" src="/superFood/backend/assets/images/user/defaultImage.png"/>
+                            <img class="imagesForm" width="100" src="/superFood_MVC/backend/assets/images/user/defaultImage.png"/>
                             <label class="formLabel" for="fileToAddUser"><i class="fas fa-pen"></i><input
                                         style="display: none" type="file" id="fileToAddUser"
                                         name="fileToUpload"></label>

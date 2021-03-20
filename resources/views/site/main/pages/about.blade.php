@@ -13,7 +13,7 @@
                             <div class="reason__box">
                                 <div class="reason__box-image animate__animated animate__zoomIn wow"
                                      data-wow-delay="1s"><img
-                                            src="/superFood/backend/assets/images/{{$widget->image}}" alt=""></div>
+                                            src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""></div>
                             </div>
                         </div>
                     @endif
@@ -57,7 +57,7 @@
                 <div class="col-12 col-lg-6 order-lg-2">
                     <div class="vision__box">
                         <div class="vision__box-image animate__animated animate__zoomIn wow"><img
-                                    src="/superFood/public/frontend/assets/images/about/vision.jpg" alt=""></div>
+                                    src="/superFood_MVC/public/frontend/assets/images/about/vision.jpg" alt=""></div>
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 order-lg-1">
@@ -154,7 +154,7 @@
     <!-- End History-->
     <!-- Start Team-->
     <div class="team">
-        <div class="team__background"><img src="/superFood/public/frontend/assets/images/about/team-background.png" alt=""></div>
+        <div class="team__background"><img src="/superFood_MVC/public/frontend/assets/images/about/team-background.png" alt=""></div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8 mx-auto text-center animate__animated animate__zoomIn wow"
@@ -169,7 +169,7 @@
                 <div class="col-12 col-md-4">
                     <div class="team__box">
                         <div class="team__box-image mx-auto animate__animated animate__fadeInLeft wow"><img
-                                    src="/superFood/public/frontend/assets/images/about/team-1.jpg" alt=""></div>
+                                    src="/superFood_MVC/public/frontend/assets/images/about/team-1.jpg" alt=""></div>
                         <div class="team__box-content animate__animated animate__fadeInUp wow" data-wow-delay="0.5s">
                             <div class="content__name">Olivia Thomas</div>
                             <div class="content__position">Senior Chief Supervisor</div>
@@ -184,7 +184,7 @@
                 <div class="col-12 col-md-4">
                     <div class="team__box">
                         <div class="team__box-image mx-auto animate__animated animate__fadeInUp wow"
-                             data-wow-delay="1s"><img src="/superFood/public/frontend/assets/images/about/team-2.jpg" alt="">
+                             data-wow-delay="1s"><img src="/superFood_MVC/public/frontend/assets/images/about/team-2.jpg" alt="">
                         </div>
                         <div class="team__box-content animate__animated animate__fadeInUp wow" data-wow-delay="1.5s">
                             <div class="content__name">Adam Boyd</div>
@@ -200,7 +200,7 @@
                 <div class="col-12 col-md-4">
                     <div class="team__box">
                         <div class="team__box-image mx-auto animate__animated animate__fadeInRight wow"
-                             data-wow-delay="2s"><img src="/superFood/public/frontend/assets/images/about/team-3.jpg" alt="">
+                             data-wow-delay="2s"><img src="/superFood_MVC/public/frontend/assets/images/about/team-3.jpg" alt="">
                         </div>
                         <div class="team__box-content animate__animated animate__fadeInUp wow" data-wow-delay="2.5s">
                             <div class="content__name">Randy Krishen</div>
@@ -222,22 +222,22 @@
         <div class="container">
             <div class="owl-partners owl-carousel owl-theme animate__animated animate__zoomIn wow" data-wow-delay="1s">
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-1.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-1.png" alt="">
                 </div>
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-2.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-2.png" alt="">
                 </div>
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-3.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-3.png" alt="">
                 </div>
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-4.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-4.png" alt="">
                 </div>
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-5.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-5.png" alt="">
                 </div>
                 <div class="partners__image"><img class="mx-auto"
-                                                  src="/superFood/public/frontend/assets/images/layout/partners-6.png" alt="">
+                                                  src="/superFood_MVC/public/frontend/assets/images/layout/partners-6.png" alt="">
                 </div>
             </div>
         </div>

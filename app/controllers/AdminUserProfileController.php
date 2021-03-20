@@ -82,12 +82,12 @@ class AdminUserProfileController extends Controller
                 ]);
             }
             if ($user) {
-                header('Location: /superFood/admin/userProfile/edit/' . $id);
+                header('Location: /superFood_MVC/admin/userProfile/edit/' . $id);
             } else {
-                echo "<script>alert('Sửa không thành công'); window.location= '/superFood/admin/userProfile/edit/$id'</script>";
+                echo "<script>alert('Sửa không thành công'); window.location= '/superFood_MVC/admin/userProfile/edit/$id'</script>";
             }
         } else {
-            echo "<script>alert('Sửa không thành công'); window.location= '/superFood/admin/userProfile/edit/$id'</script>";
+            echo "<script>alert('Sửa không thành công'); window.location= '/superFood_MVC/admin/userProfile/edit/$id'</script>";
         }
     }
 
@@ -108,6 +108,6 @@ class AdminUserProfileController extends Controller
         Users::find($id['id'])->update([
             'image' => ''
         ]);
-        header('Location: /superFood/admin/userProfile/edit/' . $id['id']);
+        header('Location: /superFood_MVC/admin/userProfile/edit/' . $id['id']);
     }
 }

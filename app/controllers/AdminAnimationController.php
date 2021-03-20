@@ -59,10 +59,10 @@ class AdminAnimationController extends Controller
                 'link_delay' => $link_delay
             ]);
             if($animations){
-                header('Location: /superFood/admin/animation');
+                header('Location: /superFood_MVC/admin/animation');
             }
             else{
-                echo "<script>alert('Thêm hiệu ứng thất bại'); window.location= '/superFood/admin/animation';</script>";
+                echo "<script>alert('Thêm hiệu ứng thất bại'); window.location= '/superFood_MVC/admin/animation';</script>";
             }
         }
     }
@@ -111,10 +111,10 @@ class AdminAnimationController extends Controller
                 'link_delay' => $link_delay
             ]);
             if($animations){
-                header('Location: /superFood/admin/animation');
+                header('Location: /superFood_MVC/admin/animation');
             }
             else{
-                echo "<script>alert('Sửa hiệu ứng thất bại'); window.location= '/superFood/admin/animation';</script>";
+                echo "<script>alert('Sửa hiệu ứng thất bại'); window.location= '/superFood_MVC/admin/animation';</script>";
             }
         }
     }
@@ -132,6 +132,6 @@ class AdminAnimationController extends Controller
      */
     public function delete($id){
         Animation::destroy($id);
-        header('Location: /superFood/admin/animation');
+        header('Location: /superFood_MVC/admin/animation');
     }
 }

@@ -1,5 +1,5 @@
 @if(!checkPer($_SESSION['user']['id'], 'animation_view'))
-    @php(header('Location: /superFood/admin/dashboard'))
+    @php(header('Location: /superFood_MVC/admin/dashboard'))
 @endif
 @extends('admin.layouts.master')
 @section('title'){{'Add Animation'}}@endsection
@@ -11,12 +11,12 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Quản lý hiệu ứng</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood_MVC/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thêm hiệu ứng</li>
                     </ol>
                 </div>
                 <div style="width: 40%; margin: auto">
-                    <form action="/superFood/admin/animation/store" method="POST">
+                    <form action="/superFood_MVC/admin/animation/store" method="POST">
                         <div class="form-group">
                             <label for="location_addAnimation">Địa điểm:</label>
                             <input type="text" name="location_addAnimation" id="location_addAnimation"

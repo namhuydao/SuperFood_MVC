@@ -44,15 +44,15 @@ class AdminPasswordController extends Controller
         $user_mail = Users::where('email', $mail)->get();
         if (!$user_mail->isEmpty()){
             $content = 'Đặt lại mật khẩu' . '<br>' .
-                'Click vào đây để đặt lại mật khẩu <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood/admin/resetPassword/create?email=' . $mail . '">Đặt lại mật khẩu</a>';
+                'Click vào đây để đặt lại mật khẩu <a href="http://' . $_SERVER['HTTP_HOST'] . '/superFood_MVC/admin/resetPassword/create?email=' . $mail . '">Đặt lại mật khẩu</a>';
 
             Mail::send($mail, $user_mail[0]->firstname, 'Mật khẩu mới của bạn!', $content);
         }
         else{
-            echo "<script>alert('Ko có Email nào như vậy'); window.location = '/superFood/admin/forgotPassword/create';</script>";
+            echo "<script>alert('Ko có Email nào như vậy'); window.location = '/superFood_MVC/admin/forgotPassword/create';</script>";
 
         }
-        echo "<script>alert('Vui lòng kiểm tra Email của bạn'); window.location = '/superFood/admin/forgotPassword/create';</script>";
+        echo "<script>alert('Vui lòng kiểm tra Email của bạn'); window.location = '/superFood_MVC/admin/forgotPassword/create';</script>";
     }
 
     /**
@@ -100,14 +100,14 @@ class AdminPasswordController extends Controller
                 'password' => $newPass
             ]);
             if ($change){
-                header('Location: /superFood/admin/userProfile/passEdit/' . $id);
+                header('Location: /superFood_MVC/admin/userProfile/passEdit/' . $id);
             }
             else{
-                echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/$id'</script>";
+                echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood_MVC/admin/userProfile/passEdit/$id'</script>";
             }
         }
         else{
-            echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood/admin/userProfile/passEdit/$id'</script>";
+            echo "<script>alert('Sửa mật khẩu không thành công'); window.location= '/superFood_MVC/admin/userProfile/passEdit/$id'</script>";
         }
     }
 

@@ -16,7 +16,7 @@
                             <div class="col-12 col-md-6 col-lg-12">
                                 <div class="contact__info-item">
                                     <div class="item__image"><i class="color-1 fas fa-map-marker-alt"></i><img
-                                                src="/superFood/public/frontend/assets/images/layout/circle-1.png" alt=""></div>
+                                                src="/superFood_MVC/public/frontend/assets/images/layout/circle-1.png" alt=""></div>
                                     <div class="item__content">
                                         <div class="item__content-title">Address</div>
                                         <div class="item__content-subtitle">103 Reade St, New York NY 10013</div>
@@ -26,7 +26,7 @@
                             <div class="col-12 col-md-6 col-lg-12">
                                 <div class="contact__info-item">
                                     <div class="item__image"><i class="color-2 fas fa-phone-alt"></i><img
-                                                src="/superFood/public/frontend/assets/images/layout/circle-2.png" alt=""></div>
+                                                src="/superFood_MVC/public/frontend/assets/images/layout/circle-2.png" alt=""></div>
                                     <div class="item__content">
                                         <div class="item__content-title">Phone</div>
                                         <div class="item__content-subtitle">+1 (212) 379 3968</div>
@@ -36,7 +36,7 @@
                             <div class="col-12 col-md-6 col-lg-12">
                                 <div class="contact__info-item">
                                     <div class="item__image"><i class="color-3 fas fa-paper-plane"></i><img
-                                                src="/superFood/public/frontend/assets/images/layout/circle-3.png" alt=""></div>
+                                                src="/superFood_MVC/public/frontend/assets/images/layout/circle-3.png" alt=""></div>
                                     <div class="item__content">
                                         <div class="item__content-title">Email</div>
                                         <div class="item__content-subtitle">hello123@gmail.com</div>
@@ -46,7 +46,7 @@
                             <div class="col-12 col-md-6 col-lg-12">
                                 <div class="contact__info-item">
                                     <div class="item__image"><i class="color-4 fas fa-share-alt"></i><img
-                                                src="/superFood/public/frontend/assets/images/layout/circle-4.png" alt=""></div>
+                                                src="/superFood_MVC/public/frontend/assets/images/layout/circle-4.png" alt=""></div>
                                     <div class="item__content">
                                         <div class="item__content-title">Social Networks</div>
                                         <div class="item__content-icon"><a class="icon__link" href="#"><i

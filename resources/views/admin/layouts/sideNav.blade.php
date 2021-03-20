@@ -3,7 +3,7 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="/superFood/admin/dashboard">
+                <a class="nav-link" href="/superFood_MVC/admin/dashboard">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
@@ -18,7 +18,7 @@
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/users">Quản lý người dùng</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/users">Quản lý người dùng</a>
                         </nav>
                     </div>
                 @endif
@@ -32,19 +32,19 @@
                     <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/news">Quản lý tin tức</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/news">Quản lý tin tức</a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/newsCategories">Quản lý danh mục tin tức</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/newsCategories">Quản lý danh mục tin tức</a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/newsTags">Quản lý Tag tin tức</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/newsTags">Quản lý Tag tin tức</a>
                         </nav>
                     </div>
                 @endif
@@ -58,19 +58,19 @@
                     <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/product">Quản lý sản phẩm</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/product">Quản lý sản phẩm</a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/productCategories">Quản lý danh mục sản phẩm</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/productCategories">Quản lý danh mục sản phẩm</a>
                         </nav>
                     </div>
                     <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/productTags">Quản lý Tag sản phẩm</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/productTags">Quản lý Tag sản phẩm</a>
                         </nav>
                     </div>
                 @endif
@@ -84,7 +84,7 @@
                     <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/animation">Quản lý hiệu ứng</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/animation">Quản lý hiệu ứng</a>
                         </nav>
                     </div>
                 @endif
@@ -92,7 +92,7 @@
                     <div class="collapse" id="collapseLayouts4" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/widget">Quản lý widget</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/widget">Quản lý widget</a>
                         </nav>
                     </div>
                 @endif
@@ -107,7 +107,7 @@
                     <div class="collapse" id="collapseLayouts5" aria-labelledby="headingOne"
                          data-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="/superFood/admin/roles">Quản lý quyền</a>
+                            <a class="nav-link" href="/superFood_MVC/admin/roles">Quản lý quyền</a>
                         </nav>
                     </div>
                 @endif

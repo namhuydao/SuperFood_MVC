@@ -5,7 +5,7 @@ use App\NewsCategories;
 use App\ProductCategories;
 use JetBrains\PhpStorm\Pure;
 
-const BASE_URL = 'http://localhost/superfood/public/';
+const BASE_URL = 'http://localhost/superFood_MVC/public/';
 
 #[Pure] function test_input($data): string
 {

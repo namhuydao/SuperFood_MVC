@@ -75,9 +75,9 @@ class AdminNewsController extends Controller
                     ]);
                 }
             }
-            header('Location:/superFood/admin/news');
+            header('Location:/superFood_MVC/admin/news');
         } else {
-            echo "<script>alert('Thêm tin thất bại'); window.location= '/superFood/admin/news';</script>";
+            echo "<script>alert('Thêm tin thất bại'); window.location= '/superFood_MVC/admin/news';</script>";
         }
     }
     /**
@@ -155,9 +155,9 @@ class AdminNewsController extends Controller
                 // trường hợp mà không chọn tag nào thì xóa hết các liên kết
                 LinkNewsTags::where('news_id', $found_news->id)->delete();
             }
-            header('Location:/superFood/admin/news');
+            header('Location:/superFood_MVC/admin/news');
         } else {
-            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood/admin/news';</script>";
+            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood_MVC/admin/news';</script>";
         }
     }
 
@@ -178,6 +178,6 @@ class AdminNewsController extends Controller
     public function delete($id){
         News::destroy($id);
         LinkNewsTags::where('news_id', $id['id'])->delete();
-        header('Location:/superFood/admin/news');
+        header('Location:/superFood_MVC/admin/news');
     }
 }

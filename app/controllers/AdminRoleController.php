@@ -49,12 +49,12 @@ class AdminRoleController extends Controller
                         'permission_id' => $per_id
                     ]);
                 }
-                header('Location: /superFood/admin/roles');
+                header('Location: /superFood_MVC/admin/roles');
             }else{
-                echo "<script>alert('Thêm quyền thất bại'); window.location= '/superFood/admin/roles';</script>";
+                echo "<script>alert('Thêm quyền thất bại'); window.location= '/superFood_MVC/admin/roles';</script>";
             }
         }else{
-            echo "<script>alert('Thêm quyền thất bại'); window.location= '/superFood/admin/roles';</script>";
+            echo "<script>alert('Thêm quyền thất bại'); window.location= '/superFood_MVC/admin/roles';</script>";
         }
     }
     /**
@@ -90,10 +90,10 @@ class AdminRoleController extends Controller
             Roles::find($id['id'])->update([
                 'name' => $name
             ]);
-            header('Location: /superFood/admin/roles');
+            header('Location: /superFood_MVC/admin/roles');
         }
         else{
-            echo "<script>alert('Sửa quyền thất bại'); window.location= '/superFood/admin/roles';</script>";
+            echo "<script>alert('Sửa quyền thất bại'); window.location= '/superFood_MVC/admin/roles';</script>";
         }
     }
 
@@ -113,7 +113,7 @@ class AdminRoleController extends Controller
     public function delete($id){
         Roles::destroy($id);
         LinkRolePermission::where('role_id', $id)->delete();
-        header('Location: /superFood/admin/roles');
+        header('Location: /superFood_MVC/admin/roles');
 
     }
 }

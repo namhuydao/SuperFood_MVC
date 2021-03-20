@@ -45,11 +45,11 @@ class AdminLoginController extends Controller
                     setcookie('email', $email, time() + (3600 * 24 * 30));
                     setcookie('password', $_POST["password"], time() + (3600 * 24 * 30));
                 }
-                header('Location:/superFood/admin/dashboard');
+                header('Location:/superFood_MVC/admin/dashboard');
             }
         }
         if ($flag == 0) {
-            echo "<script>alert('Sai tài khoản hoặc mật khẩu!'); window.location= '/superFood/admin/login';</script>";
+            echo "<script>alert('Sai tài khoản hoặc mật khẩu!'); window.location= '/superFood_MVC/admin/login';</script>";
         }
     }
     /**
@@ -86,6 +86,6 @@ class AdminLoginController extends Controller
 
     public function logout(){
         unset($_SESSION['user']);
-        header('Location:/superFood/admin/login');
+        header('Location:/superFood_MVC/admin/login');
     }
 }

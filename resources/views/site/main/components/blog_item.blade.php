@@ -8,8 +8,8 @@
                  data-wow-delay="0.5s">
                 <div class="blog__item-image">
                     <?php
-                    echo "<a href=/superFood/site/blog_details/$news_item->id><img
-                                                            src=/superFood/backend/assets/images/" . $news_item->image . "></a>"
+                    echo "<a href=/superFood_MVC/site/blog_details/$news_item->id><img
+                                                            src=/superFood_MVC/backend/assets/images/" . $news_item->image . "></a>"
                     ?>
                     <div class="image__date">
                                                     <span class="date"><?php
@@ -28,14 +28,14 @@
                     </div>
                     <div class="info__title">
                         <?php
-                        echo "<a title='" . $news_item->title . "' href=/superFood/site/blog_details/$news_item->id><span>" . $news_item->title . "</span></a>"
+                        echo "<a title='" . $news_item->title . "' href=/superFood_MVC/site/blog_details/$news_item->id><span>" . $news_item->title . "</span></a>"
                         ?>
                     </div>
                     <div class="info__text">{{$news_item->description}}
                     </div>
                     <?php
                     echo "<a class=info__readmore
-                                                   href=/superFood/site/blog_details/$news_item->id><span>Read More</span></a>"
+                                                   href=/superFood_MVC/site/blog_details/$news_item->id><span>Read More</span></a>"
                     ?>
                 </div>
             </div>

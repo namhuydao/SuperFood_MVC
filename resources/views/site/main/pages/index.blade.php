@@ -16,7 +16,7 @@
                     @php($count++)
                     <div class="slider__item">
                         <div class="slider__item-background background-left animate__animated animate__{{$animation_arr[$count - 1]['images']}} wow">
-                            <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                            <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
                         </div>
                         <div class="container h-100">
                             <div class="slider__item-content animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow"
@@ -55,7 +55,7 @@
                                 <div
                                         class=" about__box-image animate__animated animate__{{$animation_arr[$count - 1]['images']}} wow"
                                         data-wow-delay="{{$animation_arr[$count - 1]['images_delay']}}">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt="about"/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt="about"/>
                                 </div>
                                 <div class="about__box-item ">
                                     <div class="item__title animate__animated animate__{{$animation_arr[$count - 1]['title']}} wow"
@@ -100,7 +100,7 @@
                         <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0">
                             <div class="portfolio__box animate__animated animate__zoomIn wow" data-wow-delay="0.5s">
                                 <div class="portfolio__box-image">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
                                 </div>
                                 <div class="portfolio__box-item">
                                     <div class="item__title">{{$widget->title}}</div>
@@ -145,7 +145,7 @@
                                 <div
                                         class="customize__box-image animate__animated animate__{{$animation_arr[$count - 1]['images']}} wow"
                                         data-wow-delay="{{$animation_arr[$count - 1]['images_delay']}}">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
                                 </div>
                                 <div class="customize__box-item">
                                     <div class="item__title animate__animated animate__{{$animation_arr[$count - 1]['title']}} wow"
@@ -180,7 +180,7 @@
                             <div class="clients__box animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow"
                                  data-wow-delay="{{$animation_arr[$count - 1]['animation_delay']}}">
                                 <div class="clients__box-image">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt="clients"/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt="clients"/>
                                 </div>
                                 <div class="clients__box-item">
                                     <div class="item__title">{{$widget->title}}</div>
@@ -288,7 +288,7 @@
                             <div class="counter__box animate__animated animate__{{$animation_arr[$count - 1]['animation']}} wow"
                                  data-wow-delay="{{$animation_arr[$count - 1]['animation_delay']}}">
                                 <div class="counter__box-image">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
                                 </div>
                                 <div class="counter__box-item">
                                     <span class="perccent-item-num counters" data-target="{{$widget->number}}">0</span>
@@ -316,7 +316,7 @@
             @if($widget->location == 'contact-item')
                 @php($count++)
         <div class="contact__background">
-            <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+            <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
         </div>
         <div class="container">
             <div class="row">

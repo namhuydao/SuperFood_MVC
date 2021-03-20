@@ -25,7 +25,7 @@ class Mail implements Notification{
 
             //Recipients
             //  Thông tin người gửi
-            $mail->setFrom('websitetest2005@gmail.com', 'SuperFood Admin');
+            $mail->setFrom('websitetest2005@gmail.com', 'superFood_MVC Admin');
 
             //  Thông tin người nhận
             $mail->addAddress($email, $name);     // Add a recipient

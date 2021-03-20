@@ -62,7 +62,7 @@ class AdminAccountController extends Controller
             ]);
         }
 
-        header("Location: /superFood/admin/login");
+        header("Location: /superFood_MVC/admin/login");
     }
 
     public function edit($id){

@@ -4,7 +4,7 @@
     <div class="banner animate__animated animate__fadeIn wow">
         @foreach($widgets as $widget)
             @if($widget->location == 'banner-item')
-                <div class="banner__background"><img src="/superFood/backend/assets/images/{{$widget->image}}" alt="">
+                <div class="banner__background"><img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt="">
                 </div>
                 <div class="banner__content text-center my-auto">
                     <div class="banner__content-title">@yield('title')</div>
@@ -33,7 +33,7 @@
                                             <!-- single product -->
                                             <article class="product">
                                                 <div class="img-container">
-                                                    <img style="width: 300px" src=/superFood/backend/assets/images/{{$product->avatar}} alt="product"
+                                                    <img style="width: 300px" src=/superFood_MVC/backend/assets/images/{{$product->avatar}} alt="product"
                                                          class="product-img"/>
                                                 </div>
                                                 <h3>{{$product->name}}</h3>
@@ -43,7 +43,7 @@
                                         </div>
                                     </div>
                                 </section>
-                                <a href="/superFood/site/product/addToCart/{{$product->id}}" class="btn btn-primary">Thêm
+                                <a href="/superFood_MVC/site/product/addToCart/{{$product->id}}" class="btn btn-primary">Thêm
                                     vào giỏ hàng</a>
                             </div>
                         @endforeach
@@ -63,19 +63,19 @@
                                     <!-- cart item -->
                                         <div class="cart-item">
                                             <img style="width: 100px"
-                                                 src="/superFood/backend/assets/images/{{\App\Product::find($product)->avatar}}"
+                                                 src="/superFood_MVC/backend/assets/images/{{\App\Product::find($product)->avatar}}"
                                                  alt="product"/>
                                             <div>
                                                 <h4>{{\App\Product::find($product)->name}}</h4>
                                                 <h5>${{\App\Product::find($product)->discount_price}}</h5>
-                                                <a href="/superFood/site/product/delete/{{$product}}"
+                                                <a href="/superFood_MVC/site/product/delete/{{$product}}"
                                                    class="remove-item">Xóa</a>
                                             </div>
                                             <div class="d-flex align-items-center">
-                                                <a href="/superFood/site/product/add/{{$product}}"><i
+                                                <a href="/superFood_MVC/site/product/add/{{$product}}"><i
                                                             class="fas fa-chevron-up"></i></a>
                                                 <p class="item-amount px-4">{{$_SESSION["qty"][$product]}}</p>
-                                                <a href="/superFood/site/product/remove/{{$product}}"><i
+                                                <a href="/superFood_MVC/site/product/remove/{{$product}}"><i
                                                             class="fas fa-chevron-down"></i></a>
                                             </div>
                                         </div>
@@ -86,8 +86,8 @@
                                 <div class="cart-footer">
                                     <?php $_SESSION["total"] = $total;?>
                                     <h3>your total : $<span class="cart-total">{{$total}}</span></h3>
-                                    <a href="/superFood/site/product/deleteCart" class="btn btn-warning">clear cart</a>
-                                    <a class="btn btn-primary" href="/superFood/site/product/checkout">Check out</a>
+                                    <a href="/superFood_MVC/site/product/deleteCart" class="btn btn-warning">clear cart</a>
+                                    <a class="btn btn-primary" href="/superFood_MVC/site/product/checkout">Check out</a>
                                 </div>
                             @endif
                         </div>

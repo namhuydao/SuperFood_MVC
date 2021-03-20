@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>SuperFood| Reset Password</title>
+    <title>superFood_MVC| Reset Password</title>
     <link href="{{BASE_URL.'core/assets/css/core.css'}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
@@ -26,7 +26,7 @@
                                 <h3 class="text-center font-weight-light my-4">Đặt lại mật khẩu</h3>
                             </div>
                             <div class="card-body">
-                                <form action="/superFood/admin/resetPassword/store" method="POST">
+                                <form action="/superFood_MVC/admin/resetPassword/store" method="POST">
                                     <input value="{{$_GET['email']}}" type="hidden" name="emailReset">
                                     <div class="form-group">
                                         <label for="">Mật khẩu mới :</label>
@@ -60,7 +60,7 @@
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="/superFood/admin/register">Chưa có tài khoản? Đăng kí ngay!</a></div>
+                                <div class="small"><a href="/superFood_MVC/admin/register">Chưa có tài khoản? Đăng kí ngay!</a></div>
                             </div>
                         </div>
                     </div>

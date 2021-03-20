@@ -54,9 +54,9 @@ class AdminResetPasswordController extends Controller
             Users::where('email', $email)->update([
                 'password' => md5($newPass)
             ]);
-            header('Location: /superFood/admin/login');
+            header('Location: /superFood_MVC/admin/login');
         }else{
-            echo "<script>alert('Không thành công!'); window.location='/superFood/admin/resetPassword/create?email=$email'; </script>";
+            echo "<script>alert('Không thành công!'); window.location='/superFood_MVC/admin/resetPassword/create?email=$email'; </script>";
         }
 
     }

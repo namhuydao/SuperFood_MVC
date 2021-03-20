@@ -46,7 +46,7 @@
                             @php $news = \App\News::orderBy('id', 'desc')->limit(3)->get() @endphp
                             @foreach($news as $post)
                                 <li class="list__item">
-                                    <div class="list__item-image"><img src="/superFood/backend/assets/images/{{$post->image}}"
+                                    <div class="list__item-image"><img src="/superFood_MVC/backend/assets/images/{{$post->image}}"
                                                                        alt="">
                                     </div>
                                     <div class="list__item-content">
@@ -99,7 +99,7 @@
                 <div class="col-12 col-lg-8 mx-auto">
                     <div class="footerBottom__content animate__animated animate__zoomIn wow" data-wow-delay="1s">
                         Copyright
-                        2020 @ Superfood Elated Themes
+                        2020 @ superFood_MVC Elated Themes
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 @if(!checkPer($_SESSION['user']['id'], 'role_view'))
-    @php(header('Location: /superFood/admin/dashboard'))
+    @php(header('Location: /superFood_MVC/admin/dashboard'))
 @endif
 @extends('admin.layouts.master')
 @section('title'){{'Add Role'}}@endsection
@@ -11,10 +11,10 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Thêm quyền</h1>
                     <ol class="breadcrumb mb-4" style="background: white">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood_MVC/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thêm quyền</li>
                     </ol>
-                    <form action="/superFood/admin/roles/store" method="POST">
+                    <form action="/superFood_MVC/admin/roles/store" method="POST">
                         <div class="role__content row">
                             <div class="col-md-4">
                                 <div class="role__left">

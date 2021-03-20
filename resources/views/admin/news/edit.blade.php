@@ -1,5 +1,5 @@
 @if(!checkPer($_SESSION['user']['id'], 'post_edit'))
-    @php(header('Location: /superFood/admin/dashboard'))
+    @php(header('Location: /superFood_MVC/admin/dashboard'))
 @endif
 @extends('admin.layouts.master')
 @section('title'){{'Edit News'}}@endsection
@@ -11,15 +11,15 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Quản lý tin tức</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood_MVC/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Sửa tin tức</li>
                     </ol>
                 </div>
                 <div style="width: 40%; margin: auto">
-                    <form action="/superFood/admin/news/update/{{$news->id}}" method="POST"
+                    <form action="/superFood_MVC/admin/news/update/{{$news->id}}" method="POST"
                           enctype="multipart/form-data">
                         <div class="form-group position-relative text-center">
-                            <img class="imagesForm" width="100" height="100" src="/superFood/backend/assets/images/{{$news->image}}"/>
+                            <img class="imagesForm" width="100" height="100" src="/superFood_MVC/backend/assets/images/{{$news->image}}"/>
                             <label class="formLabel" for="fileToAddNews"><i class="fas fa-pen"></i>
                                 <input style="display: none" type="file" id="fileToAddNews"
                                         name="fileToUpload"></label>

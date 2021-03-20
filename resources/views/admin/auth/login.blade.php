@@ -1,6 +1,6 @@
 @php
     if (isset($_SESSION['user'])) {
-        header('Location:/superFood/admin/dashboard');
+        header('Location:/superFood_MVC/admin/dashboard');
     }
     $email = '';
     $password = '';
@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>SuperFood| Login</title>
+    <title>superFood_MVC| Login</title>
     <link href="{{BASE_URL.'core/assets/css/core.css'}}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
             crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@
                         <div class="card shadow-lg border-0 rounded-lg mt-5">
                             <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                             <div class="card-body">
-                                <form action="/superFood/admin/loginCheck" method="POST">
+                                <form action="/superFood_MVC/admin/loginCheck" method="POST">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputEmailAddress">Email</label>
                                         <input name="email" value="<?php echo $email;?>" class="form-control py-4"
@@ -53,13 +53,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <a class="small" href="/superFood/admin/forgotPassword/create">Quên mật khẩu?</a>
+                                        <a class="small" href="/superFood_MVC/admin/forgotPassword/create">Quên mật khẩu?</a>
                                         <button name="login" class="btn btn-primary">Đăng nhập</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="/superFood/admin/register">Chưa có tài khoản? Đăng ký
+                                <div class="small"><a href="/superFood_MVC/admin/register">Chưa có tài khoản? Đăng ký
                                         ngay!</a></div>
                             </div>
                         </div>

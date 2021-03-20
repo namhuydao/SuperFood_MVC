@@ -25,7 +25,7 @@
                             </p>
                             <div class="item__info">
                                 <div class="item__info-image">
-                                    <img src="/superFood/backend/assets/images/{{$widget->image}}" alt=""/>
+                                    <img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt=""/>
                                 </div>
                                 <div class="item__info-content">
                                     <div class="content__name">{{$widget->author}}</div>

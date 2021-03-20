@@ -67,9 +67,9 @@ class AdminWidgetController extends Controller
             ]);
         }
         if ($widget) {
-            header('Location:/superFood/admin/widget');
+            header('Location:/superFood_MVC/admin/widget');
         } else {
-            echo "<script>alert('Thêm widget thất bại'); window.location= '/superFood/admin/widget';</script>";
+            echo "<script>alert('Thêm widget thất bại'); window.location= '/superFood_MVC/admin/widget';</script>";
         }
     }
     /**
@@ -116,9 +116,9 @@ class AdminWidgetController extends Controller
             ]);
         }
         if ($widget) {
-            header('Location:/superFood/admin/widget');
+            header('Location:/superFood_MVC/admin/widget');
         } else {
-            echo "<script>alert('Sửa widget thất bại'); window.location= '/superFood/admin/widget';</script>";
+            echo "<script>alert('Sửa widget thất bại'); window.location= '/superFood_MVC/admin/widget';</script>";
         }
     }
 

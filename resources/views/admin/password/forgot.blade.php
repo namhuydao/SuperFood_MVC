@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>SuperFood| Reset Password</title>
+    <title>superFood_MVC| Reset Password</title>
     <link href="{{BASE_URL.'core/assets/css/core.css'}}" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
             crossorigin="anonymous"></script>
@@ -25,7 +25,7 @@
                                 <div class="small mb-3 text-muted">Nhập Email và chúng tôi sẽ gửi link để lấy lại mật
                                     khẩu
                                 </div>
-                                <form method="POST" action="/superFood/admin/forgotPassword/store">
+                                <form method="POST" action="/superFood_MVC/admin/forgotPassword/store">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputEmailAddress">Email</label>
                                         <input value="" name="emailForgot"
@@ -34,13 +34,13 @@
                                                placeholder="Nhập Email"/>
                                     </div>
                                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <a class="small" href="/superFood/admin/login">Trở về Đăng nhập</a>
+                                        <a class="small" href="/superFood_MVC/admin/login">Trở về Đăng nhập</a>
                                         <button type="submit" name="forgotBtn" class="btn btn-primary">Đặt lại mật khẩu</button>
                                     </div>
                                 </form>
                             </div>
                             <div class="card-footer text-center">
-                                <div class="small"><a href="/superFood/admin/register">Chưa có tài khoản? Đăng kí ngay!</a></div>
+                                <div class="small"><a href="/superFood_MVC/admin/register">Chưa có tài khoản? Đăng kí ngay!</a></div>
                             </div>
                         </div>
                     </div>

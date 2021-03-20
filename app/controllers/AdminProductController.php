@@ -78,9 +78,9 @@ class AdminProductController extends Controller
                     ]);
                 }
             }
-            header('Location:/superFood/admin/product');
+            header('Location:/superFood_MVC/admin/product');
         } else {
-            echo "<script>alert('Thêm sản phẩm thất bại'); window.location= '/superFood/admin/product';</script>";
+            echo "<script>alert('Thêm sản phẩm thất bại'); window.location= '/superFood_MVC/admin/product';</script>";
         }
     }
     /**
@@ -160,9 +160,9 @@ class AdminProductController extends Controller
                 // trường hợp mà không chọn tag nào thì xóa hết các liên kết
                 LinkProductTags::where('product_id', $found_product->id)->delete();
             }
-            header('Location:/superFood/admin/product');
+            header('Location:/superFood_MVC/admin/product');
         } else {
-            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood/admin/product';</script>";
+            echo "<script>alert('Sửa tin thất bại'); window.location= '/superFood_MVC/admin/product';</script>";
         }
     }
 
@@ -183,6 +183,6 @@ class AdminProductController extends Controller
     public function delete($id){
         Product::destroy($id);
         LinkProductTags::where('product_id', $id['id'])->delete();
-        header('Location:/superFood/admin/product');
+        header('Location:/superFood_MVC/admin/product');
     }
 }

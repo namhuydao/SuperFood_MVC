@@ -86,12 +86,12 @@ class AdminUserController extends Controller
                 ]);
             }
             if ($user) {
-                header('Location: /superFood/admin/users');
+                header('Location: /superFood_MVC/admin/users');
             } else {
-                echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
+                echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood_MVC/admin/users';</script>";
             }
         } else {
-            echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
+            echo "<script>alert('Tạo người dùng không thành công'); window.location= '/superFood_MVC/admin/users';</script>";
         }
     }
 
@@ -151,12 +151,12 @@ class AdminUserController extends Controller
                 ]);
             }
             if ($user) {
-                header('Location: /superFood/admin/users');
+                header('Location: /superFood_MVC/admin/users');
             } else {
-                echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
+                echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood_MVC/admin/users';</script>";
             }
         } else {
-            echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood/admin/users';</script>";
+            echo "<script>alert('Sửa người dùng không thành công'); window.location= '/superFood_MVC/admin/users';</script>";
         }
     }
 
@@ -176,6 +176,6 @@ class AdminUserController extends Controller
     public function delete($id)
     {
         Users::destroy($id);
-        header('Location: /superFood/admin/users');
+        header('Location: /superFood_MVC/admin/users');
     }
 }

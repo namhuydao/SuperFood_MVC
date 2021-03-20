@@ -4,7 +4,7 @@
     <div class="banner animate__animated animate__fadeIn wow">
         @foreach($widgets as $widget)
             @if($widget->location == 'banner-item')
-                <div class="banner__background"><img src="/superFood/backend/assets/images/{{$widget->image}}" alt="">
+                <div class="banner__background"><img src="/superFood_MVC/backend/assets/images/{{$widget->image}}" alt="">
                 </div>
                 <div class="banner__content text-center my-auto">
                     <div class="banner__content-title">@yield('title')</div>
@@ -27,7 +27,7 @@
                                         href="#">0</a> comments</span>
                         </div>
                         <div class="blogDetails__content-image"><img
-                                    src="/superFood/backend/assets/images/{{$news->image}}" alt=""></div>
+                                    src="/superFood_MVC/backend/assets/images/{{$news->image}}" alt=""></div>
                         <div class="blogDetails__content-text">
                             <?php echo $news->content ?>
                         </div>
@@ -64,7 +64,7 @@
 
                                 if (!$previous->isEmpty()) {
                                     $row = $previous->toArray();
-                                    echo "<a href=/superFood/site/blog_details/" . $row[0]['id'] . ">Previous Post</a>";
+                                    echo "<a href=/superFood_MVC/site/blog_details/" . $row[0]['id'] . ">Previous Post</a>";
                                 } else {
                                     echo "<a>Previous Post</a>";
                                 }
@@ -75,7 +75,7 @@
                                 $next = \App\News::where('id', '>', $news->id)->orderBy('id', 'asc')->get();
                                 if (!$next->isEmpty()) {
                                     $row = $next->toArray();
-                                    echo "<a href=/superFood/site/blog_details/" . $row[0]['id'] . ">Next Post</a>";
+                                    echo "<a href=/superFood_MVC/site/blog_details/" . $row[0]['id'] . ">Next Post</a>";
                                 } else {
                                     echo "<a>Next Post</a>";
                                 }
@@ -119,8 +119,8 @@
                                 @foreach ($news as $news_item)
                                     <div class="blog__item animate__animated animate__zoomIn wow" data-wow-delay="0.5s">
                                         <div class="blog__item-image"><?php
-                                            echo "<a href=/superFood/site/blog_details/$news_item->id><img
-                                                            src=/superFood/backend/assets/images/" . $news_item->image . "></a>"
+                                            echo "<a href=/superFood_MVC/site/blog_details/$news_item->id><img
+                                                            src=/superFood_MVC/backend/assets/images/" . $news_item->image . "></a>"
                                             ?>
                                             <div class="image__date"><span class="date">
                                             <?php
@@ -140,14 +140,14 @@
                                             </div>
                                             <div class="info__title">
                                                 <?php
-                                                echo "<a title='" . $news_item->title . "' href=/superFood/site/blog_details/$news_item->id><span>" . $news_item->title . "</span></a>"
+                                                echo "<a title='" . $news_item->title . "' href=/superFood_MVC/site/blog_details/$news_item->id><span>" . $news_item->title . "</span></a>"
                                                 ?>
                                             </div>
                                             <div class="info__text">{{$news_item->description}}
                                             </div>
                                             <?php
                                             echo "<a class=info__readmore
-                                                   href=/superFood/site/blog_details/$news_item->id><span>Read More</span></a>"
+                                                   href=/superFood_MVC/site/blog_details/$news_item->id><span>Read More</span></a>"
                                             ?>
                                         </div>
                                     </div>

@@ -8,7 +8,7 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Thông tin người dùng</h1>
                     <ol class="breadcrumb mb-4" style="background: white">
-                        <li class="breadcrumb-item"><a href="/superFood/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="/superFood_MVC/admin/dashboard">Dashboard</a></li>
                         <li class="breadcrumb-item active">Thông tin người dùng</li>
                     </ol>
                     <div class="profile__content row">
@@ -17,9 +17,9 @@
                                 <div class="profile-name">
                                     <img src="
                                     @if ($user->image)
-                                            /superFood/backend/assets/images/{{$user->image}}
+                                            /superFood_MVC/backend/assets/images/{{$user->image}}
                                     @else
-                                            /superFood/backend/assets/images/user/defaultImage.png
+                                            /superFood_MVC/backend/assets/images/user/defaultImage.png
                                     @endif
                                             " alt="" width="150"
                                          height="150">
@@ -43,7 +43,7 @@
                                     </svg>
                                     Thông tin chính
                                 </a>
-                                <a href="/superFood/admin/userProfile/passEdit/{{$user->id}}" id="resetBtn"
+                                <a href="/superFood_MVC/admin/userProfile/passEdit/{{$user->id}}" id="resetBtn"
                                    class="btn btn-light" style="width: 100%;display: flex">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                          width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
@@ -66,22 +66,22 @@
                             <div class="profile__right">
                                 <div class="profile__info active">
                                     <h6>Thông tin cơ bản</h6>
-                                    <form action="/superFood/admin/userProfile/update/{{$user->id}}" method="POST"
+                                    <form action="/superFood_MVC/admin/userProfile/update/{{$user->id}}" method="POST"
                                           enctype="multipart/form-data">
                                         <div class="avatar form-group">
                                             <p>Avatar</p>
                                             <div class="avatar_img" style="width: 60%">
                                                 <img id="profileInfo_avatar" src="
                                                 @if ($user->image)
-                                                        /superFood/backend/assets/images/{{$user->image}}
+                                                        /superFood_MVC/backend/assets/images/{{$user->image}}
                                                 @else
-                                                        /superFood/backend/assets/images/user/defaultImage.png
+                                                        /superFood_MVC/backend/assets/images/user/defaultImage.png
                                                 @endif
                                                         " alt="" width="120" height="120">
                                                 <label class="avatarLabel" for="avatar"><i class="fas fa-pen"></i><input
                                                             style="display: none" type="file" id="avatar"
                                                             name="fileToUpload"></label>
-                                                <a href="/superFood/admin/userProfile/deleteImage/{{$user->id}}"
+                                                <a href="/superFood_MVC/admin/userProfile/deleteImage/{{$user->id}}"
                                                    style="border: none; background: transparent"
                                                    class="avatarDelete"><i class="fas fa-times"></i></a>
                                             </div>

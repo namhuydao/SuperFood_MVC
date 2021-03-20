@@ -1,6 +1,6 @@
 @php
   if (!isset($_SESSION['user'])) {
-      header('Location:/superFood/admin/login');
+      header('Location:/superFood_MVC/admin/login');
   }
 @endphp
 <!DOCTYPE html>
