@@ -145,7 +145,7 @@ class AdminUserController extends Controller
                     'image' => $image_src
                 ]);
             }
-            if ($password == "") {
+            if ($password != "") {
                 $user = Users::find($id['id'])->update([
                     'password' => md5($password)
                 ]);
