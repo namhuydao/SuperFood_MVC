@@ -21,7 +21,6 @@
             <div class="row">
                 <div class="col-lg-8 col-xl-9">
                     <div class="blog__content">
-
                         <?php
                         $per_page = 2;
                         $allNews = \App\News::all();
@@ -66,15 +65,15 @@
                 page: nut_phan_trang,
                 per_page: '<?php echo $per_page;?>',
             },
-            beforeSend: function(){
-                $("#loader").add('show');
-            },
+            // beforeSend: function(){
+            //     $("#loader").add('show');
+            // },
             success: function (resp) {
                 $('.blog__content').html(resp);
             },
-            complete:function(data){
-                $("#loader").remove('show');
-            }
+            // complete:function(data){
+            //     $("#loader").remove('show');
+            // }
         });
     })
 </script>

@@ -74,6 +74,7 @@ class AdminUserController extends Controller
                     'email' => $email,
                     'password' => md5($password),
                     'role_id' => $role_id,
+                    'status' => 1,
                     'image' => $image_src
                 ]);
             } else {
@@ -82,6 +83,7 @@ class AdminUserController extends Controller
                     'lastname' => $lastname,
                     'email' => $email,
                     'password' => md5($password),
+                    'status' => 1,
                     'role_id' => $role_id
                 ]);
             }
